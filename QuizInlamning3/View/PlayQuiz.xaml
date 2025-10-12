@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="QuizInlamning3.View.PlayQuiz"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuizInlamning3.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        
+    
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/> <!--Frågetext-->
+            <RowDefinition Height="*"/> <!--Alternativ-->
+            <RowDefinition Height="70"/> <!--Knappar, Nästa fråga-->
+        </Grid.RowDefinitions>
+
+        <!--Frågetext-->
+        <Border Background="Aqua" BorderBrush="Black" BorderThickness="2" Margin="5" CornerRadius="10">
+            <Border.Effect>
+                <DropShadowEffect/>
+            </Border.Effect>
+            <TextBlock Name="questionTxtBox" Text="Question text" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" />
+        </Border>
+        
+        
+        
+        
+        <!--Alternativ-->
+        <Grid Grid.Row="1" Background="Aqua">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+             
+            <!--Alt 1-->
+            <Border BorderThickness="5" BorderBrush="Black" Grid.Row="0" Grid.Column="0" Margin="5" CornerRadius="10" >
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
+                <Button x:Name="answerIdx0Btn" Click="answerBtn_Click" Tag="0" Content="Alt 1" />
+            </Border>
+
+            <!--Alt 2-->
+            <Border BorderThickness="5" BorderBrush="Black" Grid.Row="0" Grid.Column="1" Margin="5" CornerRadius="10" >
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
+                <Button x:Name="answerIdx1Btn" Click="answerBtn_Click" Tag="1" Content="Alt 2" />
+            </Border>
+            <!--Alt 3-->
+            <Border BorderThickness="5" BorderBrush="Black" Grid.Row="1" Grid.Column="0" Margin="5" CornerRadius="10" >
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
+                <Button x:Name="answerIdx2Btn" Click="answerBtn_Click" Tag="2" Content="Alt 3" />
+            </Border>
+            <!--Alt 4-->
+            <Border BorderThickness="5" BorderBrush="Black" Grid.Row="1" Grid.Column="1" Margin="5" CornerRadius="10" >
+                <Border.Effect>
+                    <DropShadowEffect/>
+                </Border.Effect>
+                <Button x:Name="answerIdx3Btn" Click="answerBtn_Click" Tag="3" Content="Alt 4" />
+            </Border>
+
+        </Grid>
+
+        <!--Nedre rad-->
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <!--Info-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock x:Name="infoPlayer">Score:</TextBlock>
+                <TextBlock Grid.Column="1" x:Name="infoQuestions">Score:</TextBlock>
+            </Grid>
+               
+            <!--Nästa fråga-->
+            <Button x:Name="NextQuestionBtn" Click="NextQuestionBtn_Click" Grid.Column="1" Margin="20">Next question ➡️</Button>
+        </Grid>
+        
+    </Grid>
+
+    
+</UserControl>

@@ -1,0 +1,62 @@
+﻿[
+  {
+    "Category": "Geografi",
+    "QuestionText": "Vilket land har flest invånare i världen?",
+    "Answers": ["Indien", "Kina", "USA", "Indonesien"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Sport",
+    "QuestionText": "Vilken sport utövas i turneringen Wimbledon?",
+    "Answers": ["Tennis", "Golf", "Cricket", "Badminton"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Film",
+    "QuestionText": "Vem spelade huvudrollen som Jack i filmen \"Titanic\"?",
+    "Answers": ["Leonardo DiCaprio", "Brad Pitt", "Matt Damon", "Tom Cruise"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Musik",
+    "QuestionText": "Vilket band hade en hit med låten \"Bohemian Rhapsody\"?",
+    "Answers": ["Queen", "The Beatles", "Pink Floyd", "The Rolling Stones"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Historia",
+    "QuestionText": "Vilket år föll Berlinmuren?",
+    "Answers": ["1987", "1989", "1991", "1993"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "Teknik",
+    "QuestionText": "Vad står förkortningen \"CPU\" för?",
+    "Answers": ["Central Processing Unit", "Computer Power Utility", "Core Program Unit", "Central Program Utility"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Djur",
+    "QuestionText": "Vilket däggdjur kan flyga?",
+    "Answers": ["Fladdermus", "Ekorre", "Kolibri", "Flygpungråtta"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Mat & Dryck",
+    "QuestionText": "Vilken ingrediens finns alltid i sushi?",
+    "Answers": ["Ris", "Tonfisk", "Soja", "Nori"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Litteratur",
+    "QuestionText": "Vem skrev böckerna om Harry Potter?",
+    "Answers": ["J.K. Rowling", "Suzanne Collins", "Stephen King", "George R.R. Martin"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Vetenskap",
+    "QuestionText": "Vilket grundämne har kemisk beteckning O?",
+    "Answers": ["Syre", "Kväve", "Väte", "Kol"],
+    "CorrectAnswerIndex": 0
+  }
+]

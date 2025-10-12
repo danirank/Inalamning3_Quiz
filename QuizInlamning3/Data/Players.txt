@@ -1,0 +1,22 @@
+﻿[
+  { "playerName": "Alice", "highScore": 8 },
+  { "playerName": "Bob", "highScore": 6 },
+  { "playerName": "Charlie", "highScore": 10 },
+  { "playerName": "Diana", "highScore": 7 },
+  { "playerName": "Elias", "highScore": 9 },
+  { "playerName": "Frida", "highScore": 5 },
+  { "playerName": "Gustav", "highScore": 8 },
+  { "playerName": "Hanna", "highScore": 6 },
+  { "playerName": "Isak", "highScore": 4 },
+  { "playerName": "Julia", "highScore": 9 },
+  { "playerName": "Kevin", "highScore": 7 },
+  { "playerName": "Lina", "highScore": 3 },
+  { "playerName": "Markus", "highScore": 10 },
+  { "playerName": "Nora", "highScore": 8 },
+  { "playerName": "Oskar", "highScore": 5 },
+  { "playerName": "Petra", "highScore": 6 },
+  { "playerName": "Robin", "highScore": 9 },
+  { "playerName": "Sara", "highScore": 7 },
+  { "playerName": "Tobias", "highScore": 10 },
+  { "playerName": "Ulrika", "highScore": 8 }
+]
