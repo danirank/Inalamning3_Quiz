@@ -35,12 +35,21 @@ namespace QuizInlamning3.View
         
         private void playerName_Click(object sender, RoutedEventArgs e)
         {
+            string name = playerName.Text;
+            if(String.IsNullOrEmpty(name))
+            {
+                MessageBox.Show("Please enter a name");
+
+            } else
+            {
+
             _player = new Player(playerName.Text,0);
 
             _quiz.AddPlayerToList(_player);
 
             _navigate(new PlayQuiz(_quiz, _player,_navigate));
             
+            }
         }
     }
 }

@@ -32,10 +32,10 @@ namespace QuizInlamning3.View
         public PlayQuiz(Quiz quiz, Player player, Action<UserControl> navigate)
         {
             InitializeComponent();
-
+           
             _quiz = quiz;
             _player = player;
-            ResetColorOnAnswerButtons();
+            ResetColorOnAnswerButtonsAndHover();
             ShowQuestion();
             _navigate = navigate;
         }
@@ -49,7 +49,15 @@ namespace QuizInlamning3.View
 
 
         }
+        private void DisableHover()
+        {
+            foreach (var b in new[] { answerIdx0Btn, answerIdx1Btn, answerIdx2Btn, answerIdx3Btn })
+            {
+                b.IsHitTestVisible = false; 
+                
+            }
 
+        }
         private void ShowAnswers(string[] answers)
         {
             answerIdx0Btn.Content = answers[0];
@@ -58,12 +66,17 @@ namespace QuizInlamning3.View
             answerIdx3Btn.Content = answers[3];
         }
 
-        private void ResetColorOnAnswerButtons()
+        private void ResetColorOnAnswerButtonsAndHover()
         {
             answerIdx0Btn.Background = Brushes.LightBlue;
             answerIdx1Btn.Background = Brushes.Yellow;
             answerIdx2Btn.Background = Brushes.Orange; 
             answerIdx3Btn.Background = Brushes.LightCoral;
+
+            foreach (var b in new[] { answerIdx0Btn, answerIdx1Btn, answerIdx2Btn, answerIdx3Btn })
+            {
+                b.IsHitTestVisible = true;
+            }
         }
 
         private void ShowNumberOfQuestions()
@@ -76,7 +89,7 @@ namespace QuizInlamning3.View
         }
         private void ShowPlayerScore()
         {
-            infoPlayer.Text = _player.ToString();
+            infoPlayer.Text = _player.Info();
         }
         private void ChangeColorOnBtn(int answer, Button btn)
         {
@@ -139,7 +152,7 @@ namespace QuizInlamning3.View
             }
             _questionMarked = false;
             string finishQuiz = "Finish quiz";
-            ResetColorOnAnswerButtons();
+            ResetColorOnAnswerButtonsAndHover();
 
             if (_currentIndex == _quiz.Questions.Count-2)
             {
@@ -166,7 +179,7 @@ namespace QuizInlamning3.View
 
             if (!_questionMarked)
             {
-
+                
                 var btn = (Button)sender;
                 int answer = int.Parse(btn.Tag.ToString());
                 int correctAnswer = _quiz.CorrectAnswer(_currentIndex);
@@ -175,7 +188,7 @@ namespace QuizInlamning3.View
                 if (isCorrect) _player.NumberOfCorrectAnswers++;
 
                 ChangeColorOnBtn(answer, btn);
-
+                DisableHover();
                 _questionMarked = true;
             } else
             {

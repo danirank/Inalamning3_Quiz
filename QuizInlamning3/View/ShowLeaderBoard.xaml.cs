@@ -32,10 +32,10 @@ namespace QuizInlamning3.View
 
         public void DisplayLeaderBoard()
         {
-            leaderboardView.Items.Clear();
+            //leaderboardView.Items.Clear();
 
 
-            leaderboardView.ItemsSource = _leaderboard;
+            //leaderboardView.ItemsSource = _leaderboard;
 
 
 
