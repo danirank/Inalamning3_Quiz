@@ -14,6 +14,8 @@ namespace QuizInlamning3.Models
 
         public int HighScore { get; set; }
 
+        public int Rank { get; set; }   
+
         public Player(string playerName, int highScore)
         {
             PlayerName = playerName;

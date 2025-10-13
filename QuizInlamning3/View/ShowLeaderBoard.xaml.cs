@@ -22,10 +22,12 @@ namespace QuizInlamning3.View
     {
         private List<Player> _leaderboard;
         private Action<UserControl> _navigate;
+        private Quiz _quiz;
         public ShowLeaderBoard(Quiz quiz, Action<UserControl> navigate)
         {
             InitializeComponent();
-            _leaderboard = quiz.SortByHighScore();
+            _quiz = quiz;
+            _leaderboard = _quiz.SortPlayersByHighScore();
             _navigate = navigate;
             DisplayLeaderBoard();
         }
@@ -35,11 +37,14 @@ namespace QuizInlamning3.View
             //leaderboardView.Items.Clear();
 
 
-            //leaderboardView.ItemsSource = _leaderboard;
+           leaderBoardData.ItemsSource = _leaderboard;
 
-
-
+            
         }
-        
+
+        private void backToMenuBtn_Click(object sender, RoutedEventArgs e)
+        {
+            _navigate(new MenuView(_quiz, _navigate));
+        }
     }
 }

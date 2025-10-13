@@ -9,14 +9,15 @@ namespace QuizInlamning3.Models
 {
     public class Quiz
     {
-        
+
         public List<Player> Players = new List<Player>();
         public List<Question> Questions = new List<Question>();
-        
-        public Quiz(List<Question> questions)
+
+        public Quiz(List<Question> questions, List<Player> players)
         {
-            
+
             Questions = questions;
+            Players = players;
         }
 
 
@@ -32,12 +33,46 @@ namespace QuizInlamning3.Models
         public string ShowQuestionText(int questionIndex) => Questions[questionIndex].QuestionText;
 
         public string[] GetAnswers(int questionIndex) => Questions[questionIndex].Answers;
-        
-        //Ranka för highScore
-        public List<Player> SortByHighScore()
+
+        //Ranka på highScore för leaderboard
+        public List<Player> SortPlayersByHighScore()
         {
-            return Players.OrderBy(x => x.HighScore).ToList();
+            var players = Players.OrderByDescending(x => x.HighScore).ToList();
+            int rank = 1;
+            int SameScore = 1; 
+
+            players[0].Rank = rank;
+
+            for (int i = 1; i < players.Count; i++)
+            {
+
+                var player = players[i];
+
+                if (player.HighScore == players[i - 1].HighScore)
+                {
+                    player.Rank = rank;
+                    SameScore++;
+                    continue;
+                    
+                } else
+                {
+                    rank += SameScore;
+                    player.Rank = rank;
+                    
+                    SameScore = 1;
+                }
+
+            }
+                
+
+            
+            return players;
         }
+
+        
+
+    
+        
 
         
     }

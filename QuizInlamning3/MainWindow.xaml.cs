@@ -34,8 +34,8 @@ namespace QuizInlamning3
             List<Question> questions = questionLoader.Load("Data/Questions.txt");
             List<Player> players = playerLoader.Load("Data/Players.txt"); 
 
-            _quiz = new Quiz(questions);
-            _quiz.Players = players;
+            _quiz = new Quiz(questions,players);
+           //_quiz.Players = players;
 
 
 

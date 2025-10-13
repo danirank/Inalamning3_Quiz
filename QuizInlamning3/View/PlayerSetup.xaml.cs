@@ -45,7 +45,7 @@ namespace QuizInlamning3.View
 
             _player = new Player(playerName.Text,0);
 
-            _quiz.AddPlayerToList(_player);
+            
 
             _navigate(new PlayQuiz(_quiz, _player,_navigate));
             

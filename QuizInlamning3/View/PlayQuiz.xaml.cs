@@ -65,7 +65,6 @@ namespace QuizInlamning3.View
             answerIdx2Btn.Content = answers[2];
             answerIdx3Btn.Content = answers[3];
         }
-
         private void ResetColorOnAnswerButtonsAndHover()
         {
             answerIdx0Btn.Background = Brushes.LightBlue;
@@ -78,7 +77,6 @@ namespace QuizInlamning3.View
                 b.IsHitTestVisible = true;
             }
         }
-
         private void ShowNumberOfQuestions()
         {
             int currenQuestion = _currentIndex + 1;
@@ -134,10 +132,10 @@ namespace QuizInlamning3.View
         }
         private void FinishQuiz()
         {
-            
-            //QuizSummary summary = new QuizSummary(_quiz);
-            
 
+            //QuizSummary summary = new QuizSummary(_quiz);
+            _player.HighScore = _player.NumberOfCorrectAnswers;
+            _quiz.AddPlayerToList(_player);
             _navigate(new MenuView(_quiz,_navigate));
             
 
