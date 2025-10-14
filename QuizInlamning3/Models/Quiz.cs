@@ -71,9 +71,29 @@ namespace QuizInlamning3.Models
 
         
 
-    
+        public List<Question> QuestionsByCategory(Category categoryInput)
+        {
+            var category  = Questions.Where(q => q.Category == categoryInput).ToList();
+            return category;
+        }
         
+        public int GetRandomQuestionIndex(List<Question> questions, List<int> usedIndexes)
+        {
+            
+            Random r = new Random();
+            int maxValue = questions.Count;
+            int randomIndex = r.Next(maxValue);
+            
 
+            while (usedIndexes.Contains(randomIndex))
+            {
+                randomIndex = r.Next(maxValue);
+            }
+
+            return randomIndex;
+        }
+
+        //public int IndexOfCurrentQuestion
         
     }
 }

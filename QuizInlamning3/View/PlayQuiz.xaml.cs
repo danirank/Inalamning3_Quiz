@@ -26,6 +26,8 @@ namespace QuizInlamning3.View
     {
         private Quiz _quiz;
         private int _currentIndex = 0;
+        private int _questionIndex = 0;
+        private List<int> _usedIndexes = new List<int>();
         private Player _player;
         private bool _questionMarked = false;
         private Action<UserControl> _navigate;
@@ -42,13 +44,22 @@ namespace QuizInlamning3.View
 
         private void ShowQuestion()
         {
+            _questionIndex = _quiz.GetRandomQuestionIndex(_quiz.Questions,_usedIndexes);
+            _usedIndexes.Add(_questionIndex);
             ShowPlayerScore();
             ShowNumberOfQuestions();
-            questionTxtBox.Text = _quiz.ShowQuestionText(_currentIndex);
-            ShowAnswers(_quiz.GetAnswers(_currentIndex));
+            QuestionText();
+            ShowAnswers(_quiz.GetAnswers(_questionIndex));
 
 
         }
+        private void QuestionText()
+        {
+
+            questionTxtBox.Text = _quiz.ShowQuestionText(_questionIndex);
+        }
+
+        
         private void DisableHover()
         {
             foreach (var b in new[] { answerIdx0Btn, answerIdx1Btn, answerIdx2Btn, answerIdx3Btn })
@@ -79,8 +90,9 @@ namespace QuizInlamning3.View
         }
         private void ShowNumberOfQuestions()
         {
+            //TODO: Set separete index for questions
             int currenQuestion = _currentIndex + 1;
-            int totalQuestions = _quiz.Questions.Count;
+            int totalQuestions = 10;
 
             infoQuestions.Text = $"Question {currenQuestion}/{totalQuestions}";
 
@@ -92,7 +104,7 @@ namespace QuizInlamning3.View
         private void ChangeColorOnBtn(int answer, Button btn)
         {
             
-            int correctAnswer = _quiz.CorrectAnswer(_currentIndex);
+            int correctAnswer = _quiz.CorrectAnswer(_questionIndex);
            
             Button[] buttons = {answerIdx0Btn,answerIdx1Btn,answerIdx2Btn,answerIdx3Btn };
             Button correctButton = null;
@@ -134,6 +146,7 @@ namespace QuizInlamning3.View
         {
 
             //QuizSummary summary = new QuizSummary(_quiz);
+            _usedIndexes.Clear();
             _player.HighScore = _player.NumberOfCorrectAnswers;
             _quiz.AddPlayerToList(_player);
             _navigate(new MenuView(_quiz,_navigate));
@@ -152,12 +165,13 @@ namespace QuizInlamning3.View
             string finishQuiz = "Finish quiz";
             ResetColorOnAnswerButtonsAndHover();
 
-            if (_currentIndex == _quiz.Questions.Count-2)
+            //TODO: Replace to separate Index for question qounter
+            if (_currentIndex == 8)
             {
                 NextQuestionBtn.Content = finishQuiz;
             }
 
-            if (_currentIndex == _quiz.Questions.Count - 1)
+            if (_currentIndex == 9)
             {
                 FinishQuiz();
                 return;
@@ -170,7 +184,6 @@ namespace QuizInlamning3.View
 
 
         }
-
         private void answerBtn_Click(object sender, RoutedEventArgs e)
         {
             

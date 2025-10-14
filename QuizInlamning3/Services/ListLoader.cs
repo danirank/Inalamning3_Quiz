@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace QuizInlamning3.Services
@@ -19,8 +20,10 @@ namespace QuizInlamning3.Services
             {
                 JsonSerializerOptions options = new JsonSerializerOptions();
                 options.PropertyNameCaseInsensitive = true;
-
-
+                JsonStringEnumConverter converter = new JsonStringEnumConverter();
+                options.Converters.Add(converter);
+                
+                
                 string text = File.ReadAllText(filepath);
 
                 list = JsonSerializer.Deserialize<List<T>>(text, options);

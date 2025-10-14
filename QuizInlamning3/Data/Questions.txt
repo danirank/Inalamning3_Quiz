@@ -1,62 +1,210 @@
 ﻿[
-  {
-    "Category": "Geografi",
-    "QuestionText": "Vilket land har flest invånare i världen?",
-    "Answers": ["Indien", "Kina", "USA", "Indonesien"],
+  { 
+    "Category": "History",
+    "QuestionText": "I vilket år slutade andra världskriget?",
+    "Answers": ["1943", "1945", "1947", "1950"],
+    "CorrectAnswerIndex": 1
+  },
+  { 
+    "Category": "History",
+    "QuestionText": "Vem var Sveriges första kung efter Kalmarunionen?",
+    "Answers": ["Gustav Vasa", "Karl XII", "Erik XIV", "Karl IX"],
     "CorrectAnswerIndex": 0
   },
-  {
-    "Category": "Sport",
-    "QuestionText": "Vilken sport utövas i turneringen Wimbledon?",
-    "Answers": ["Tennis", "Golf", "Cricket", "Badminton"],
-    "CorrectAnswerIndex": 0
+  { 
+    "Category": "History",
+    "QuestionText": "Vilken mur föll 1989?",
+    "Answers": ["Kinesiska muren", "Berlinmuren", "Hadrianus mur", "Limes"],
+    "CorrectAnswerIndex": 1
   },
+
   {
-    "Category": "Film",
-    "QuestionText": "Vem spelade huvudrollen som Jack i filmen \"Titanic\"?",
-    "Answers": ["Leonardo DiCaprio", "Brad Pitt", "Matt Damon", "Tom Cruise"],
-    "CorrectAnswerIndex": 0
-  },
-  {
-    "Category": "Musik",
-    "QuestionText": "Vilket band hade en hit med låten \"Bohemian Rhapsody\"?",
-    "Answers": ["Queen", "The Beatles", "Pink Floyd", "The Rolling Stones"],
-    "CorrectAnswerIndex": 0
-  },
-  {
-    "Category": "Historia",
-    "QuestionText": "Vilket år föll Berlinmuren?",
-    "Answers": ["1987", "1989", "1991", "1993"],
+    "Category": "Geography",
+    "QuestionText": "Vilket är världens största land till ytan?",
+    "Answers": ["Kanada", "Ryssland", "USA", "Kina"],
     "CorrectAnswerIndex": 1
   },
   {
-    "Category": "Teknik",
-    "QuestionText": "Vad står förkortningen \"CPU\" för?",
-    "Answers": ["Central Processing Unit", "Computer Power Utility", "Core Program Unit", "Central Program Utility"],
+    "Category": "Geography",
+    "QuestionText": "Vad heter huvudstaden i Kanada?",
+    "Answers": ["Toronto", "Montreal", "Ottawa", "Vancouver"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "Geography",
+    "QuestionText": "Vilket hav ligger mellan Europa och Afrika?",
+    "Answers": ["Atlanten", "Medelhavet", "Svarta havet", "Röda havet"],
+    "CorrectAnswerIndex": 1
+  },
+
+  {
+    "Category": "Science",
+    "QuestionText": "Vilken planet är närmast solen?",
+    "Answers": ["Merkurius", "Venus", "Jorden", "Mars"],
     "CorrectAnswerIndex": 0
   },
   {
-    "Category": "Djur",
-    "QuestionText": "Vilket däggdjur kan flyga?",
-    "Answers": ["Fladdermus", "Ekorre", "Kolibri", "Flygpungråtta"],
+    "Category": "Science",
+    "QuestionText": "Vilket grundämne har den kemiska beteckningen O?",
+    "Answers": ["Syre", "Guld", "Kväve", "Väte"],
     "CorrectAnswerIndex": 0
   },
   {
-    "Category": "Mat & Dryck",
-    "QuestionText": "Vilken ingrediens finns alltid i sushi?",
-    "Answers": ["Ris", "Tonfisk", "Soja", "Nori"],
+    "Category": "Science",
+    "QuestionText": "Vad heter processen när växter omvandlar ljus till energi?",
+    "Answers": ["Fotosyntes", "Respiration", "Fermentation", "Absorption"],
+    "CorrectAnswerIndex": 0
+  },
+
+  {
+    "Category": "Sports",
+    "QuestionText": "Vilket land vann VM i fotboll 2018?",
+    "Answers": ["Tyskland", "Brasilien", "Frankrike", "Argentina"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "Sports",
+    "QuestionText": "Hur lång är en maraton?",
+    "Answers": ["21 km", "30 km", "42 km", "50 km"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "Sports",
+    "QuestionText": "Vilken färg har ledartröjan i Tour de France?",
+    "Answers": ["Grön", "Gul", "Röd", "Blå"],
+    "CorrectAnswerIndex": 1
+  },
+
+  {
+    "Category": "Entertainment",
+    "QuestionText": "Vem spelar Jack Sparrow i Pirates of the Caribbean?",
+    "Answers": ["Johnny Depp", "Brad Pitt", "Orlando Bloom", "Tom Cruise"],
     "CorrectAnswerIndex": 0
   },
   {
-    "Category": "Litteratur",
-    "QuestionText": "Vem skrev böckerna om Harry Potter?",
-    "Answers": ["J.K. Rowling", "Suzanne Collins", "Stephen King", "George R.R. Martin"],
+    "Category": "Entertainment",
+    "QuestionText": "Vilken studio gjorde Toy Story?",
+    "Answers": ["Pixar", "DreamWorks", "Illumination", "Blue Sky"],
     "CorrectAnswerIndex": 0
   },
   {
-    "Category": "Vetenskap",
-    "QuestionText": "Vilket grundämne har kemisk beteckning O?",
-    "Answers": ["Syre", "Kväve", "Väte", "Kol"],
+    "Category": "Entertainment",
+    "QuestionText": "Vilken TV-serie utspelar sig i staden Hawkins?",
+    "Answers": ["Stranger Things", "Dark", "The Witcher", "Wednesday"],
     "CorrectAnswerIndex": 0
+  },
+
+  {
+    "Category": "ArtAndLiterature",
+    "QuestionText": "Vem målade Mona Lisa?",
+    "Answers": ["Leonardo da Vinci", "Michelangelo", "Picasso", "Rembrandt"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "ArtAndLiterature",
+    "QuestionText": "Vem skrev 'Hobbit'?",
+    "Answers": ["C.S. Lewis", "J.R.R. Tolkien", "George R.R. Martin", "Philip Pullman"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "ArtAndLiterature",
+    "QuestionText": "Vilken svensk författare skapade Karlsson på taket?",
+    "Answers": ["Astrid Lindgren", "Selma Lagerlöf", "Karin Boye", "Pär Lagerkvist"],
+    "CorrectAnswerIndex": 0
+  },
+
+  {
+    "Category": "PopCulture",
+    "QuestionText": "Vilket spel blev globalt fenomen 2016 med AR?",
+    "Answers": ["Ingress", "Pokémon GO", "Wizards Unite", "Jurassic World Alive"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "PopCulture",
+    "QuestionText": "Vilken serie gjorde 'Red Light, Green Light' till en meme?",
+    "Answers": ["Money Heist", "Squid Game", "Alice in Borderland", "Dark"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "PopCulture",
+    "QuestionText": "Vilken artist populariserade 'Single Ladies' dansen?",
+    "Answers": ["Beyoncé", "Rihanna", "Lady Gaga", "Katy Perry"],
+    "CorrectAnswerIndex": 0
+  },
+
+  {
+    "Category": "Technology",
+    "QuestionText": "Vad står CPU för?",
+    "Answers": ["Central Processing Unit", "Computer Power Unit", "Control Processing Unit", "Core Performance Unit"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Technology",
+    "QuestionText": "Vilket företag utvecklade Android?",
+    "Answers": ["Apple", "Microsoft", "Google", "Samsung"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "Technology",
+    "QuestionText": "Vilket versionshanteringssystem skapades av Linus Torvalds?",
+    "Answers": ["Git", "SVN", "Mercurial", "CVS"],
+    "CorrectAnswerIndex": 0
+  },
+
+  {
+    "Category": "GeneralKnowledge",
+    "QuestionText": "Hur många dagar finns det i ett skottår?",
+    "Answers": ["365", "366", "367", "368"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "GeneralKnowledge",
+    "QuestionText": "Vilket språk talas i Brasilien?",
+    "Answers": ["Spanska", "Portugisiska", "Franska", "Engelska"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "GeneralKnowledge",
+    "QuestionText": "Vilket djur kallas kungen av djungeln?",
+    "Answers": ["Tiger", "Lejon", "Gorilla", "Elefant"],
+    "CorrectAnswerIndex": 1
+  },
+
+  {
+    "Category": "FoodAndDrink",
+    "QuestionText": "Vilket land kommer rätten sushi från?",
+    "Answers": ["Kina", "Japan", "Korea", "Thailand"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "FoodAndDrink",
+    "QuestionText": "Vilken dryck görs genom att jäsa druvor?",
+    "Answers": ["Öl", "Vin", "Cider", "Sake"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "FoodAndDrink",
+    "QuestionText": "Vad är huvudingrediensen i hummus?",
+    "Answers": ["Kikärtor", "Linser", "Sojabönor", "Ärtor"],
+    "CorrectAnswerIndex": 0
+  },
+
+  {
+    "Category": "Nature",
+    "QuestionText": "Vilket är världens snabbaste landdjur?",
+    "Answers": ["Gepard", "Lejon", "Antilop", "Leopard"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Nature",
+    "QuestionText": "Vilken gas tar växter upp vid fotosyntesen?",
+    "Answers": ["Syre", "Koldioxid", "Kväve", "Metan"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "Nature",
+    "QuestionText": "Vilken fågel kan inte flyga men springer snabbt?",
+    "Answers": ["Pingvin", "Struts", "Emu", "Tukan"],
+    "CorrectAnswerIndex": 1
   }
 ]
