@@ -30,7 +30,10 @@ namespace QuizInlamning3
             InitializeComponent();
             var playerLoader = new ListLoader<Player>();
             var questionLoader = new ListLoader<Question>();
+            var apiQuestionLoader = new TriviaApiLoader();
 
+
+            List<ApiQuestion> apiQuestions = apiQuestionLoader.Load("OpenAPIs/api.php");
             List<Question> questions = questionLoader.Load("Data/Questions.txt");
             List<Player> players = playerLoader.Load("Data/Players.txt"); 
 

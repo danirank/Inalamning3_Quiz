@@ -8,20 +8,7 @@ using System.Text.Json;
 
 namespace QuizInlamning3.Models
 {
-    public enum Category
-    {
-        History,
-        Geography,
-        Science,
-        Sports,
-        Entertainment,
-        ArtAndLiterature,
-        PopCulture,
-        Technology,
-        GeneralKnowledge,
-        FoodAndDrink,
-        Nature
-    }
+   
 
     public class Question
     {
