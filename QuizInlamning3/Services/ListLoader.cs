@@ -12,7 +12,7 @@ namespace QuizInlamning3.Services
 {
     public class ListLoader<T> : ILoader<T> where T : class
     {
-        public List<T> Load (string filepath)
+        public async Task<List<T>> LoadAsync (string filepath)
         {
             var list = new List<T>();
 
@@ -20,13 +20,16 @@ namespace QuizInlamning3.Services
             {
                 JsonSerializerOptions options = new JsonSerializerOptions();
                 options.PropertyNameCaseInsensitive = true;
+
                 JsonStringEnumConverter converter = new JsonStringEnumConverter();
                 options.Converters.Add(converter);
-                
-                
-                string text = File.ReadAllText(filepath);
 
-                list = JsonSerializer.Deserialize<List<T>>(text, options);
+
+                using (var stream = File.OpenRead(filepath))
+                {
+
+                    list = await JsonSerializer.DeserializeAsync<List<T>>(stream, options);
+                }
             }
 
             return list;

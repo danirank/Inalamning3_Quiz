@@ -1,0 +1,39 @@
+﻿[
+  {
+    "Category": "GeneralKnowledge",
+    "Type": "Text",
+    "QuestionText": "Vad heter Sveriges huvudstad?",
+    "Answers": ["Göteborg", "Stockholm", "Malmö", "Uppsala"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "ScienceAndNature",
+    "Type": "Text",
+    "QuestionText": "Vilken planet är känd som den röda planeten?",
+    "Answers": ["Mars", "Venus", "Jupiter", "Saturnus"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Animals",
+    "Type": "Image",
+    "QuestionText": "Vilket djur visas på bilden?",
+    "ImagePath": "Images/fox.jpg",
+    "Answers": ["Räv", "Varg", "Lodjur", "Mård"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Sports",
+    "Type": "Text",
+    "QuestionText": "Hur många spelare finns det i ett fotbollslag på planen samtidigt?",
+    "Answers": ["9", "10", "11", "12"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "Geography",
+    "Type": "Image",
+    "QuestionText": "Vilket land visas på kartan?",
+    "ImagePath": "Images/italy_map.png",
+    "Answers": ["Italien", "Spanien", "Frankrike", "Portugal"],
+    "CorrectAnswerIndex": 0
+  }
+]

@@ -1,18 +1,21 @@
 ﻿[
   { 
     "Category": "History",
+    "Type": Text,
     "QuestionText": "I vilket år slutade andra världskriget?",
     "Answers": ["1943", "1945", "1947", "1950"],
     "CorrectAnswerIndex": 1
   },
   { 
     "Category": "History",
+    "Type": Text,
     "QuestionText": "Vem var Sveriges första kung efter Kalmarunionen?",
     "Answers": ["Gustav Vasa", "Karl XII", "Erik XIV", "Karl IX"],
     "CorrectAnswerIndex": 0
   },
   { 
     "Category": "History",
+    "Type": Text,
     "QuestionText": "Vilken mur föll 1989?",
     "Answers": ["Kinesiska muren", "Berlinmuren", "Hadrianus mur", "Limes"],
     "CorrectAnswerIndex": 1
@@ -20,18 +23,21 @@
 
   {
     "Category": "Geography",
+    "Type": Text,
     "QuestionText": "Vilket är världens största land till ytan?",
     "Answers": ["Kanada", "Ryssland", "USA", "Kina"],
     "CorrectAnswerIndex": 1
   },
   {
     "Category": "Geography",
+    "Type": Text,
     "QuestionText": "Vad heter huvudstaden i Kanada?",
     "Answers": ["Toronto", "Montreal", "Ottawa", "Vancouver"],
     "CorrectAnswerIndex": 2
   },
   {
     "Category": "Geography",
+    "Type": Text,
     "QuestionText": "Vilket hav ligger mellan Europa och Afrika?",
     "Answers": ["Atlanten", "Medelhavet", "Svarta havet", "Röda havet"],
     "CorrectAnswerIndex": 1
@@ -39,18 +45,21 @@
 
   {
     "Category": "Science",
+    "Type": Text,
     "QuestionText": "Vilken planet är närmast solen?",
     "Answers": ["Merkurius", "Venus", "Jorden", "Mars"],
     "CorrectAnswerIndex": 0
   },
   {
     "Category": "Science",
+    "Type": Text,
     "QuestionText": "Vilket grundämne har den kemiska beteckningen O?",
     "Answers": ["Syre", "Guld", "Kväve", "Väte"],
     "CorrectAnswerIndex": 0
   },
   {
     "Category": "Science",
+    "Type": Text,
     "QuestionText": "Vad heter processen när växter omvandlar ljus till energi?",
     "Answers": ["Fotosyntes", "Respiration", "Fermentation", "Absorption"],
     "CorrectAnswerIndex": 0
@@ -58,18 +67,21 @@
 
   {
     "Category": "Sports",
+    "Type": Text,
     "QuestionText": "Vilket land vann VM i fotboll 2018?",
     "Answers": ["Tyskland", "Brasilien", "Frankrike", "Argentina"],
     "CorrectAnswerIndex": 2
   },
   {
     "Category": "Sports",
+    "Type": Text,
     "QuestionText": "Hur lång är en maraton?",
     "Answers": ["21 km", "30 km", "42 km", "50 km"],
     "CorrectAnswerIndex": 2
   },
   {
     "Category": "Sports",
+    "Type": Text,
     "QuestionText": "Vilken färg har ledartröjan i Tour de France?",
     "Answers": ["Grön", "Gul", "Röd", "Blå"],
     "CorrectAnswerIndex": 1
@@ -77,18 +89,21 @@
 
   {
     "Category": "Entertainment",
+    "Type": Text,
     "QuestionText": "Vem spelar Jack Sparrow i Pirates of the Caribbean?",
     "Answers": ["Johnny Depp", "Brad Pitt", "Orlando Bloom", "Tom Cruise"],
     "CorrectAnswerIndex": 0
   },
   {
     "Category": "Entertainment",
+    "Type": Text,
     "QuestionText": "Vilken studio gjorde Toy Story?",
     "Answers": ["Pixar", "DreamWorks", "Illumination", "Blue Sky"],
     "CorrectAnswerIndex": 0
   },
   {
     "Category": "Entertainment",
+    "Type": Text,
     "QuestionText": "Vilken TV-serie utspelar sig i staden Hawkins?",
     "Answers": ["Stranger Things", "Dark", "The Witcher", "Wednesday"],
     "CorrectAnswerIndex": 0
@@ -96,18 +111,21 @@
 
   {
     "Category": "ArtAndLiterature",
+    "Type": Text,
     "QuestionText": "Vem målade Mona Lisa?",
     "Answers": ["Leonardo da Vinci", "Michelangelo", "Picasso", "Rembrandt"],
     "CorrectAnswerIndex": 0
   },
   {
     "Category": "ArtAndLiterature",
+    "Type": Text,
     "QuestionText": "Vem skrev 'Hobbit'?",
     "Answers": ["C.S. Lewis", "J.R.R. Tolkien", "George R.R. Martin", "Philip Pullman"],
     "CorrectAnswerIndex": 1
   },
   {
     "Category": "ArtAndLiterature",
+    "Type": Text,
     "QuestionText": "Vilken svensk författare skapade Karlsson på taket?",
     "Answers": ["Astrid Lindgren", "Selma Lagerlöf", "Karin Boye", "Pär Lagerkvist"],
     "CorrectAnswerIndex": 0
@@ -115,18 +133,21 @@
 
   {
     "Category": "PopCulture",
+    "Type": Text,
     "QuestionText": "Vilket spel blev globalt fenomen 2016 med AR?",
     "Answers": ["Ingress", "Pokémon GO", "Wizards Unite", "Jurassic World Alive"],
     "CorrectAnswerIndex": 1
   },
   {
     "Category": "PopCulture",
+    "Type": Text,
     "QuestionText": "Vilken serie gjorde 'Red Light, Green Light' till en meme?",
     "Answers": ["Money Heist", "Squid Game", "Alice in Borderland", "Dark"],
     "CorrectAnswerIndex": 1
   },
   {
     "Category": "PopCulture",
+    "Type": Text,
     "QuestionText": "Vilken artist populariserade 'Single Ladies' dansen?",
     "Answers": ["Beyoncé", "Rihanna", "Lady Gaga", "Katy Perry"],
     "CorrectAnswerIndex": 0
@@ -134,18 +155,21 @@
 
   {
     "Category": "Technology",
+    "Type": Text,
     "QuestionText": "Vad står CPU för?",
     "Answers": ["Central Processing Unit", "Computer Power Unit", "Control Processing Unit", "Core Performance Unit"],
     "CorrectAnswerIndex": 0
   },
   {
     "Category": "Technology",
+    "Type": Text,
     "QuestionText": "Vilket företag utvecklade Android?",
     "Answers": ["Apple", "Microsoft", "Google", "Samsung"],
     "CorrectAnswerIndex": 2
   },
   {
     "Category": "Technology",
+    "Type": Text,
     "QuestionText": "Vilket versionshanteringssystem skapades av Linus Torvalds?",
     "Answers": ["Git", "SVN", "Mercurial", "CVS"],
     "CorrectAnswerIndex": 0
@@ -153,18 +177,21 @@
 
   {
     "Category": "GeneralKnowledge",
+    "Type": Text,
     "QuestionText": "Hur många dagar finns det i ett skottår?",
     "Answers": ["365", "366", "367", "368"],
     "CorrectAnswerIndex": 1
   },
   {
     "Category": "GeneralKnowledge",
+    "Type": Text,
     "QuestionText": "Vilket språk talas i Brasilien?",
     "Answers": ["Spanska", "Portugisiska", "Franska", "Engelska"],
     "CorrectAnswerIndex": 1
   },
   {
     "Category": "GeneralKnowledge",
+    "Type": Text,
     "QuestionText": "Vilket djur kallas kungen av djungeln?",
     "Answers": ["Tiger", "Lejon", "Gorilla", "Elefant"],
     "CorrectAnswerIndex": 1
@@ -172,18 +199,21 @@
 
   {
     "Category": "FoodAndDrink",
+    "Type": Text,
     "QuestionText": "Vilket land kommer rätten sushi från?",
     "Answers": ["Kina", "Japan", "Korea", "Thailand"],
     "CorrectAnswerIndex": 1
   },
   {
     "Category": "FoodAndDrink",
+    "Type": Text,
     "QuestionText": "Vilken dryck görs genom att jäsa druvor?",
     "Answers": ["Öl", "Vin", "Cider", "Sake"],
     "CorrectAnswerIndex": 1
   },
   {
     "Category": "FoodAndDrink",
+    "Type": Text,
     "QuestionText": "Vad är huvudingrediensen i hummus?",
     "Answers": ["Kikärtor", "Linser", "Sojabönor", "Ärtor"],
     "CorrectAnswerIndex": 0
@@ -191,18 +221,21 @@
 
   {
     "Category": "Nature",
+    "Type": Text,
     "QuestionText": "Vilket är världens snabbaste landdjur?",
     "Answers": ["Gepard", "Lejon", "Antilop", "Leopard"],
     "CorrectAnswerIndex": 0
   },
   {
     "Category": "Nature",
+    "Type": Text,
     "QuestionText": "Vilken gas tar växter upp vid fotosyntesen?",
     "Answers": ["Syre", "Koldioxid", "Kväve", "Metan"],
     "CorrectAnswerIndex": 1
   },
   {
     "Category": "Nature",
+    "Type": Text,
     "QuestionText": "Vilken fågel kan inte flyga men springer snabbt?",
     "Answers": ["Pingvin", "Struts", "Emu", "Tukan"],
     "CorrectAnswerIndex": 1

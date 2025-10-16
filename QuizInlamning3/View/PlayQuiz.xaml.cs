@@ -55,8 +55,21 @@ namespace QuizInlamning3.View
         }
         private void QuestionText()
         {
+            
 
             questionTxtBox.Text = _quiz.ShowQuestionText(_questionIndex);
+
+            if (_quiz.IsImageQuestion(_questionIndex))
+            {
+                var imagePath = _quiz.Questions[_questionIndex].ImagePath;
+                var fullPath = System.IO.Path.GetFullPath(imagePath);
+                imageQuestion.Source = new BitmapImage(new Uri (fullPath, UriKind.RelativeOrAbsolute));
+                imageQuestion.Visibility = Visibility.Visible;  
+            } else
+            {
+                imageQuestion.Visibility = Visibility.Collapsed;
+            }
+          
         }
 
         
@@ -90,9 +103,9 @@ namespace QuizInlamning3.View
         }
         private void ShowNumberOfQuestions()
         {
-            //TODO: Set separete index for questions
+            
             int currenQuestion = _currentIndex + 1;
-            int totalQuestions = 10;
+            int totalQuestions = 5;
 
             infoQuestions.Text = $"Question {currenQuestion}/{totalQuestions}";
 
@@ -166,12 +179,12 @@ namespace QuizInlamning3.View
             ResetColorOnAnswerButtonsAndHover();
 
             //TODO: Replace to separate Index for question qounter
-            if (_currentIndex == 8)
+            if (_currentIndex == 3)
             {
                 NextQuestionBtn.Content = finishQuiz;
             }
 
-            if (_currentIndex == 9)
+            if (_currentIndex == 5)
             {
                 FinishQuiz();
                 return;

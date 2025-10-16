@@ -8,6 +8,6 @@ namespace QuizInlamning3.Services
 {
     public interface ILoader<T>
     {
-        List<T> Load(string path);
+        Task<List<T>> LoadAsync(string path);
     }
 }

@@ -32,6 +32,12 @@ namespace QuizInlamning3.Models
 
         public string ShowQuestionText(int questionIndex) => Questions[questionIndex].QuestionText;
 
+        public bool IsImageQuestion (int questionIndex)
+        {
+            return Questions[questionIndex].Type == Type.Image;
+        }
+
+
         public string[] GetAnswers(int questionIndex) => Questions[questionIndex].Answers;
 
         //Ranka på highScore för leaderboard

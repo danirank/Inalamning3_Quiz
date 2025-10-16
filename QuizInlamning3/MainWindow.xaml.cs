@@ -28,18 +28,31 @@ namespace QuizInlamning3
         public MainWindow()
         {
             InitializeComponent();
+
+            Loaded += MainLoaded;
+
+        }
+
+
+        private async void MainLoaded(object sender, RoutedEventArgs e)
+        {
+
+            _quiz = await LoadQuizAsync();
+            MainContent.Content = new MenuView(_quiz, Navigate);
+
+        }
+        private async Task<Quiz> LoadQuizAsync()
+        {
             var playerLoader = new ListLoader<Player>();
             var questionLoader = new ListLoader<Question>();
 
-            List<Question> questions = questionLoader.Load("Data/Questions.txt");
-            List<Player> players = playerLoader.Load("Data/Players.txt"); 
+            var questionsTask = questionLoader.LoadAsync("Data/ImagesQuestions.txt");
+            var playersTask = playerLoader.LoadAsync("Data/Players.txt");
 
-            _quiz = new Quiz(questions,players);
-           //_quiz.Players = players;
+            var questions = await questionsTask;
+            var players = await playersTask;
 
-
-
-            MainContent.Content = new MenuView(_quiz, Navigate);
+            return new Quiz(questions, players);
         }
 
         public void Navigate(UserControl newView)
