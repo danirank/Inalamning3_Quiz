@@ -10,22 +10,16 @@ namespace QuizInlamning3.Models
 {
     public enum Category
     {
-        History,
-        Geography,
-        Science,
-        Sports,
-        Entertainment,
-        ArtAndLiterature,
-        PopCulture,
-        Technology,
+       
         GeneralKnowledge,
         FoodAndDrink,
-        Nature,
+        Sports,
         Animals,
+        Geography,
         ScienceAndNature
     }
 
-   public enum Type
+   public enum QType
     {
         Text, Image 
     }
@@ -34,7 +28,7 @@ namespace QuizInlamning3.Models
     {
         public Category Category { get; set; }
 
-        public Type Type { get; set; }
+        public QType QType { get; set; }
         public string QuestionText { get; set; }
 
         public string ImagePath { get; set; }
@@ -46,10 +40,10 @@ namespace QuizInlamning3.Models
         public Question() { }
 
         //Konstruktor för textfrågor
-        public Question(Category category, string questionText, string[]answers, int correctAnswerIndex) 
+        public Question(Category category, QType type, string questionText, string[] answers, int correctAnswerIndex)
         {
             Category = category;
-            Type = Type.Text;
+            QType = type;
             QuestionText = questionText;
             Answers = answers;
             CorrectAnswerIndex = correctAnswerIndex;
@@ -57,10 +51,10 @@ namespace QuizInlamning3.Models
         }
 
         //Konstruktor för bildfrågor
-        public Question(Category category, string questionText, string imagePath, string[] answers, int correctAnswerIndex)
+        public Question(Category category, QType type, string questionText, string imagePath, string[] answers, int correctAnswerIndex)
         {
             Category = category;
-            Type = Type.Image;
+            QType = type;
             QuestionText = questionText;
             ImagePath = imagePath;
             Answers = answers;

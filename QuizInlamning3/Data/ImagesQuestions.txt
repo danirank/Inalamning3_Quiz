@@ -1,39 +1,195 @@
 ﻿[
   {
     "Category": "GeneralKnowledge",
-    "Type": "Text",
+    "QType": "Text",
     "QuestionText": "Vad heter Sveriges huvudstad?",
     "Answers": ["Göteborg", "Stockholm", "Malmö", "Uppsala"],
     "CorrectAnswerIndex": 1
   },
   {
+    "Category": "GeneralKnowledge",
+    "QType": "Image",
+    "QuestionText": "Vilket land tillhör flaggan på bilden?",
+    "ImagePath": "Images/flag_sweden.jpg",
+    "Answers": ["Sverige", "Norge", "Finland", "Danmark"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "GeneralKnowledge",
+    "QType": "Text",
+    "QuestionText": "Vem skrev romanen 'Pippi Långstrump'?",
+    "Answers": ["Selma Lagerlöf", "Astrid Lindgren", "Tove Jansson", "August Strindberg"],
+    "CorrectAnswerIndex": 1
+  },
+
+  {
     "Category": "ScienceAndNature",
-    "Type": "Text",
+    "QType": "Text",
     "QuestionText": "Vilken planet är känd som den röda planeten?",
     "Answers": ["Mars", "Venus", "Jupiter", "Saturnus"],
     "CorrectAnswerIndex": 0
   },
   {
+    "Category": "ScienceAndNature",
+    "QType": "Text",
+    "QuestionText": "Vad kallas växtens process där den omvandlar solljus till energi?",
+    "Answers": ["Fotosyntes", "Fermentering", "Respiration", "Destillation"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "ScienceAndNature",
+    "QType": "Image",
+    "QuestionText": "Vad illustreras på bilden?",
+    "ImagePath": "Images/moon_phases.png",
+    "Answers": ["Månens faser", "Solfläckar", "Norrsken", "Meteorregn"],
+    "CorrectAnswerIndex": 0
+  },
+
+  {
     "Category": "Animals",
-    "Type": "Image",
+    "QType": "Image",
     "QuestionText": "Vilket djur visas på bilden?",
     "ImagePath": "Images/fox.jpg",
     "Answers": ["Räv", "Varg", "Lodjur", "Mård"],
     "CorrectAnswerIndex": 0
   },
   {
+    "Category": "Animals",
+    "QType": "Text",
+    "QuestionText": "Vilket däggdjur kan flyga?",
+    "Answers": ["Fladdermus", "Kråka", "Kolibri", "Pingvin"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Animals",
+    "QType": "Text",
+    "QuestionText": "Vad äter en ko främst?",
+    "Answers": ["Kött", "Gräs", "Fisk", "Insekter"],
+    "CorrectAnswerIndex": 1
+  },
+
+  {
     "Category": "Sports",
-    "Type": "Text",
+    "QType": "Text",
     "QuestionText": "Hur många spelare finns det i ett fotbollslag på planen samtidigt?",
     "Answers": ["9", "10", "11", "12"],
     "CorrectAnswerIndex": 2
   },
   {
+    "Category": "Sports",
+    "QType": "Image",
+    "QuestionText": "Vilken sport visas på bilden?",
+    "ImagePath": "Images/tennis_racket_ball.jpg",
+    "Answers": ["Tennis", "Badminton", "Squash", "Paddel"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Sports",
+    "QType": "Text",
+    "QuestionText": "Vilken sport spelas på Wimbledon?",
+    "Answers": ["Golf", "Tennis", "Cricket", "Rugby"],
+    "CorrectAnswerIndex": 1
+  },
+
+  {
     "Category": "Geography",
-    "Type": "Image",
+    "QType": "Image",
     "QuestionText": "Vilket land visas på kartan?",
     "ImagePath": "Images/italy_map.png",
     "Answers": ["Italien", "Spanien", "Frankrike", "Portugal"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Geography",
+    "QType": "Text",
+    "QuestionText": "Vilken är världens längsta flod enligt de flesta källor?",
+    "Answers": ["Nilen", "Amazonas", "Mississippi", "Yangtze"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "Geography",
+    "QType": "Text",
+    "QuestionText": "Vilket hav ligger öster om Sverige?",
+    "Answers": ["Östersjön", "Nordsjön", "Medelhavet", "Svarta havet"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "GeneralKnowledge",
+    "QType": "Image",
+    "QuestionText": "Vilket instrument visas på bilden?",
+    "ImagePath": "Images/guitar.jpg",
+    "Answers": ["Gitarr", "Fiol", "Piano", "Trumpet"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "GeneralKnowledge",
+    "QType": "Text",
+    "QuestionText": "Vilket århundrade började den industriella revolutionen?",
+    "Answers": ["1500-talet", "1600-talet", "1700-talet", "1800-talet"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "ScienceAndNature",
+    "QType": "Image",
+    "QuestionText": "Vilken vetenskaplig utrustning syns på bilden?",
+    "ImagePath": "Images/microscope.jpg",
+    "Answers": ["Teleskop", "Mikroskop", "Barometer", "Spektrometer"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "ScienceAndNature",
+    "QType": "Text",
+    "QuestionText": "Vad mäter man i enheten 'Newton'?",
+    "Answers": ["Tryck", "Energi", "Kraft", "Ljudnivå"],
+    "CorrectAnswerIndex": 2
+  }, 
+  {
+    "Category": "Animals",
+    "QType": "Image",
+    "QuestionText": "Vilket djur visas på bilden?",
+    "ImagePath": "Images/elephant.png",
+    "Answers": ["Elefant", "Flodhäst", "Noshörning", "Giraff"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Animals",
+    "QType": "Text",
+    "QuestionText": "Vilket djur lägger ägg men är ett däggdjur?",
+    "Answers": ["Näbbdjur", "Val", "Känguru", "Fladdermus"],
+    "CorrectAnswerIndex": 0
+  },
+
+ 
+  {
+    "Category": "Sports",
+    "QType": "Image",
+    "QuestionText": "Vilken sport visas på bilden?",
+    "ImagePath": "Images/basketball.jpg",
+    "Answers": ["Handboll", "Basket", "Baseboll", "Rugby"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "Sports",
+    "QType": "Text",
+    "QuestionText": "Vilken sport använder en klubba och en puck?",
+    "Answers": ["Ishockey", "Golf", "Baseboll", "Bandy"],
+    "CorrectAnswerIndex": 0
+  },
+
+  
+  {
+    "Category": "Geography",
+    "QType": "Image",
+    "QuestionText": "Vilken världsdel markeras på bilden?",
+    "ImagePath": "Images/africa_map.jpg",
+    "Answers": ["Afrika", "Asien", "Europa", "Sydamerika"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Geography",
+    "QType": "Text",
+    "QuestionText": "Vilket land har flest invånare i världen?",
+    "Answers": ["Indien", "USA", "Kina", "Indonesien"],
     "CorrectAnswerIndex": 0
   }
 ]

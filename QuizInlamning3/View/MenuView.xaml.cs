@@ -30,6 +30,7 @@ namespace QuizInlamning3.View
             InitializeComponent();
             _quiz = quiz;
             _navigate = navigate;
+            
         }
 
         private void playBtn_Click(object sender, RoutedEventArgs e)

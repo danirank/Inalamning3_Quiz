@@ -7,6 +7,56 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Border Grid.Row="0">
+            <TextBlock VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontSize="24">Edit Questions</TextBlock>
+        </Border>
+
+        <!-- Listbox + Alternativ -->
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- Rubriker -->
+                <RowDefinition Height="*"/>
+                <!-- Innehåll -->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Rubriker -->
+            <Border Grid.Row="0" Grid.Column="0" Padding="5" Background="#EEE" CornerRadius="4" Margin="0,0,0,5">
+                <TextBlock Text="Alla frågor" FontWeight="Bold"/>
+            </Border>
+            <Border Grid.Row="0" Grid.Column="1" Padding="5" Background="#EEE" CornerRadius="4" Margin="0,0,0,5">
+                <TextBlock HorizontalAlignment="Center" Text="Redigera fråga" FontWeight="Bold"/>
+            </Border>
+
+            <!-- Listan -->
+            <Border Grid.Row="1" Grid.Column="0" BorderBrush="#CCC" BorderThickness="1" CornerRadius="4">
+                <ListBox Name="ListAllQuestionsText"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                     Margin="0"
+                     Padding="4"
+                     SelectionChanged="ListAllQuestionsText_SelectionChanged"/>
+            </Border>
+
+            <!-- Alternativ -->
+            <StackPanel Margin="10" x:Name="answersTxtbox" Grid.Row="1" Grid.Column="1">
+                <TextBox x:Name="TxtQuestionText"/>
+                <TextBox x:Name="imageStringTxtbox"></TextBox>
+            </StackPanel>
+        </Grid>
     </Grid>
+
 </UserControl>

@@ -25,27 +25,32 @@ namespace QuizInlamning3.View
     public partial class PlayQuiz : UserControl
     {
         private Quiz _quiz;
-        private int _currentIndex = 0;
         private int _questionIndex = 0;
-        private List<int> _usedIndexes = new List<int>();
+        private int _playerIndex = 0;
         private Player _player;
         private bool _questionMarked = false;
+        private bool _runQuiz = true;
         private Action<UserControl> _navigate;
-        public PlayQuiz(Quiz quiz, Player player, Action<UserControl> navigate)
+        public PlayQuiz(Quiz quiz, List<Question> currentQuestions, Action<UserControl> navigate)
         {
             InitializeComponent();
            
             _quiz = quiz;
-            _player = player;
+            _navigate = navigate;
+            _player = _quiz.Players[_playerIndex]; 
+            _quiz.Questions = currentQuestions;
+            
             ResetColorOnAnswerButtonsAndHover();
             ShowQuestion();
-            _navigate = navigate;
+
+
         }
 
+      
         private void ShowQuestion()
         {
-            _questionIndex = _quiz.GetRandomQuestionIndex(_quiz.Questions,_usedIndexes);
-            _usedIndexes.Add(_questionIndex);
+            //_questionIndex = _quiz.GetRandomQuestionIndex(_quiz.Questions,_usedIndexes);
+            //_usedIndexes.Add(_questionIndex); //Ändra eftersom frågorna redan ska vara utvalda
             ShowPlayerScore();
             ShowNumberOfQuestions();
             QuestionText();
@@ -55,8 +60,6 @@ namespace QuizInlamning3.View
         }
         private void QuestionText()
         {
-            
-
             questionTxtBox.Text = _quiz.ShowQuestionText(_questionIndex);
 
             if (_quiz.IsImageQuestion(_questionIndex))
@@ -71,8 +74,6 @@ namespace QuizInlamning3.View
             }
           
         }
-
-        
         private void DisableHover()
         {
             foreach (var b in new[] { answerIdx0Btn, answerIdx1Btn, answerIdx2Btn, answerIdx3Btn })
@@ -104,8 +105,8 @@ namespace QuizInlamning3.View
         private void ShowNumberOfQuestions()
         {
             
-            int currenQuestion = _currentIndex + 1;
-            int totalQuestions = 5;
+            int currenQuestion = _questionIndex + 1;
+            int totalQuestions = _quiz.Questions.Count;
 
             infoQuestions.Text = $"Question {currenQuestion}/{totalQuestions}";
 
@@ -155,14 +156,41 @@ namespace QuizInlamning3.View
 
 
         }
+
+        private bool CheckPlayerIndex(int index)
+        {
+            
+            if (index  < _quiz.Players.Count)
+            {
+                _runQuiz = true;
+            } else
+            {
+                _runQuiz = false;
+            }
+            return _runQuiz;
+        }
         private void FinishQuiz()
         {
 
-            //QuizSummary summary = new QuizSummary(_quiz);
-            _usedIndexes.Clear();
+            
+            //TODO: Spara över
             _player.HighScore = _player.NumberOfCorrectAnswers;
-            _quiz.AddPlayerToList(_player);
-            _navigate(new MenuView(_quiz,_navigate));
+            
+
+             _playerIndex++;
+            CheckPlayerIndex(_playerIndex);
+
+            if (_runQuiz)
+            {
+                _player = _quiz.Players[_playerIndex];
+                _questionIndex = 0;
+                ShowQuestion();
+            } else
+            {
+                _navigate(new ShowLeaderBoard(_quiz, _navigate));
+            }
+            //_quiz.AddPlayerToList(_player);
+            //_navigate(new MenuView(_quiz,_navigate));
             
 
         }
@@ -176,27 +204,31 @@ namespace QuizInlamning3.View
             }
             _questionMarked = false;
             string finishQuiz = "Finish quiz";
+
             ResetColorOnAnswerButtonsAndHover();
 
-            //TODO: Replace to separate Index for question qounter
-            if (_currentIndex == 3)
+            
+            if (_questionIndex == _quiz.Questions.Count-2)
             {
                 NextQuestionBtn.Content = finishQuiz;
             }
 
-            if (_currentIndex == 5)
+            if (_questionIndex == _quiz.Questions.Count-1)
             {
                 FinishQuiz();
                 return;
+                
             }
-            
-            _currentIndex++;
+            _questionIndex++;
             ShowQuestion();
+            //TODO: Logik för när nästa spelare tar över 
 
            
 
 
         }
+
+        //TODO: Bygg ihop med RunQuiz? 
         private void answerBtn_Click(object sender, RoutedEventArgs e)
         {
             
@@ -206,7 +238,7 @@ namespace QuizInlamning3.View
                 
                 var btn = (Button)sender;
                 int answer = int.Parse(btn.Tag.ToString());
-                int correctAnswer = _quiz.CorrectAnswer(_currentIndex);
+                int correctAnswer = _quiz.CorrectAnswer(_questionIndex);
                 bool isCorrect = _quiz.CheckAnswer(answer, correctAnswer);
 
                 if (isCorrect) _player.NumberOfCorrectAnswers++;

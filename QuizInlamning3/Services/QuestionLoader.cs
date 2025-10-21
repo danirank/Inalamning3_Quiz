@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 using QuizInlamning3.Models;
 
+//Används inte 
 namespace QuizInlamning3.Services
 {
     public static class QuestionLoader 

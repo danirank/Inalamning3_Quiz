@@ -46,6 +46,7 @@ namespace QuizInlamning3
             var playerLoader = new ListLoader<Player>();
             var questionLoader = new ListLoader<Question>();
 
+            //Laddar ALLA frågor och tidigare spelare
             var questionsTask = questionLoader.LoadAsync("Data/ImagesQuestions.txt");
             var playersTask = playerLoader.LoadAsync("Data/Players.txt");
 

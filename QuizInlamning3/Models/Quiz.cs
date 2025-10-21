@@ -34,10 +34,8 @@ namespace QuizInlamning3.Models
 
         public bool IsImageQuestion (int questionIndex)
         {
-            return Questions[questionIndex].Type == Type.Image;
-        }
-
-
+            return Questions[questionIndex].QType == QType.Image;
+        }  
         public string[] GetAnswers(int questionIndex) => Questions[questionIndex].Answers;
 
         //Ranka på highScore för leaderboard
@@ -70,8 +68,6 @@ namespace QuizInlamning3.Models
 
             }
                 
-
-            
             return players;
         }
 
@@ -83,6 +79,7 @@ namespace QuizInlamning3.Models
             return category;
         }
         
+        //Används inte
         public int GetRandomQuestionIndex(List<Question> questions, List<int> usedIndexes)
         {
             
