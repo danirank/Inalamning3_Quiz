@@ -12,12 +12,25 @@ namespace QuizInlamning3.Models
 
         public List<Player> Players = new List<Player>();
         public List<Question> Questions = new List<Question>();
+        public List<ApiQuestion> ApiQuestions = new List<ApiQuestion>();
 
+        //Konstruktor för txt fil
         public Quiz(List<Question> questions, List<Player> players)
         {
 
             Questions = questions;
             Players = players;
+        }
+
+        //Konstruktor för Api
+
+        public Quiz(List<ApiQuestion> apiQuestions, List<Player> players) 
+        {
+
+            ApiQuestions = apiQuestions;
+            Players = players; 
+        
+        
         }
 
 
