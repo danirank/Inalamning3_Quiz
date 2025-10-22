@@ -39,9 +39,9 @@ namespace QuizInlamning3.Models
         public string[] GetAnswers(List<Question> questions, int questionIndex) => questions[questionIndex].Answers;
 
         //Ranka på highScore för leaderboard
-        public List<Player> SortPlayersByHighScore()
+        public List<Player> SortPlayersByHighScore(List<Player> players)
         {
-            var players = Players.OrderByDescending(x => x.PercentageScore).ToList();
+            players = players.OrderByDescending(x => x.PercentageScore).ToList();
             int rank = 1;
             int SameScore = 1; 
 

@@ -23,11 +23,11 @@ namespace QuizInlamning3.View
         private List<Player> _leaderboard;
         private Action<UserControl> _navigate;
         private Quiz _quiz;
-        public ShowLeaderBoard(Quiz quiz, Action<UserControl> navigate)
+        public ShowLeaderBoard(Quiz quiz, List<Player> players, Action<UserControl> navigate)
         {
             InitializeComponent();
             _quiz = quiz;
-            _leaderboard = _quiz.SortPlayersByHighScore();
+            _leaderboard = _quiz.SortPlayersByHighScore(players);
             _navigate = navigate;
             DisplayLeaderBoard();
         }

@@ -130,10 +130,10 @@ namespace QuizInlamning3.View
 
             playerNameTxt.Text = string.Empty; 
             playerNameTxt.Focus();
-                //MessageBox.Show($"{_player.PlayerName}");
-            
+            //MessageBox.Show($"{_player.PlayerName}");
 
-            _quiz.Players = _activePlayers.ToList();
+
+            _quiz.Players.Add(_player);
 
             
 
@@ -155,9 +155,10 @@ namespace QuizInlamning3.View
                 MessageBox.Show("No active PLayers");
                     return;
             }
-            
 
-                _navigate(new PlayQuiz(_quiz,_currentQuestions,_navigate));
+          List<Player> players = _activePlayers.ToList();
+
+                _navigate(new PlayQuiz(_quiz,players,_currentQuestions,_navigate));
             
             
         }

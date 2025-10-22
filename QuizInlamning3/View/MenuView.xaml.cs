@@ -35,25 +35,22 @@ namespace QuizInlamning3.View
 
         private void playBtn_Click(object sender, RoutedEventArgs e)
         {
-            //PlayerSetup playerSetup = new PlayerSetup(_quiz);
-            //Content = playerSetup;
+            
             _navigate(new PlayerSetup(_quiz,_navigate));
 
         }
 
         private void editBtn_Click(object sender, RoutedEventArgs e)
         {
-            //EditQuestions editQuestions = new EditQuestions(_quiz);
-            //Content = editQuestions;
+            
             _navigate(new EditQuestions(_quiz,_navigate));
         }
 
         private void leaderboardBtn_Click(object sender, RoutedEventArgs e)
         {
-            //ShowLeaderBoard leaderBoardView = new ShowLeaderBoard(_quiz);
-            //Content = leaderBoardView;
+           
 
-            _navigate(new ShowLeaderBoard(_quiz,_navigate));
+            _navigate(new ShowLeaderBoard(_quiz,_quiz.Players,_navigate));
         }
     }
 }

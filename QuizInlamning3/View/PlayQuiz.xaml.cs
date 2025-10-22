@@ -32,13 +32,15 @@ namespace QuizInlamning3.View
         private bool _runQuiz = true;
         private Action<UserControl> _navigate;
         private List<Question> _questions;
-        public PlayQuiz(Quiz quiz, List<Question> currentQuestions, Action<UserControl> navigate)
+        private List<Player> _players;
+        public PlayQuiz(Quiz quiz, List<Player> activePlayers, List<Question> currentQuestions, Action<UserControl> navigate)
         {
             InitializeComponent();
            
             _quiz = quiz;
             _navigate = navigate;
-            _player = _quiz.Players[_playerIndex]; 
+            _players = activePlayers;
+            _player = _players[_playerIndex]; 
             _questions = currentQuestions;
             
             ResetColorOnAnswerButtonsAndHover();
@@ -54,7 +56,7 @@ namespace QuizInlamning3.View
                 NextPlayerStyleBtn();
             }
 
-            if (_questions.Count == 1 && _quiz.Players.Count==1)
+            if (_questions.Count == 1 && _players.Count==1)
             {
                 FinishQuizStyleBtn();
             }
@@ -191,7 +193,7 @@ namespace QuizInlamning3.View
         private bool CheckPlayerIndex(int index)
         {
             
-            if (index  < _quiz.Players.Count)
+            if (index  < _players.Count)
             {
                 _runQuiz = true;
             } else
@@ -200,11 +202,9 @@ namespace QuizInlamning3.View
             }
             return _runQuiz;
         }
-        private async void FinishQuiz()
+        private void FinishQuiz()
         {
-
-            
-            
+ 
             _player.HighScore = _player.NumberOfCorrectAnswers;
             _player.PercentageScore = _player.GetPercentageScore(_questions);
 
@@ -215,17 +215,14 @@ namespace QuizInlamning3.View
 
             if (_runQuiz)
             {
-                _player = _quiz.Players[_playerIndex];
+                _player = _players[_playerIndex];
                 _questionIndex = 0;
                 ShowQuestion();
             } else //Om alla kört, avsluta
             {
                
 
-
-               
-
-                _navigate(new ShowLeaderBoard(_quiz, _navigate));
+                _navigate(new ShowLeaderBoard(_quiz,_players, _navigate));
             }
             //_quiz.AddPlayerToList(_player);
             //_navigate(new MenuView(_quiz,_navigate));
@@ -265,8 +262,9 @@ namespace QuizInlamning3.View
 
             if (!_questionMarked)
             {
-
                 MessageBox.Show("At least take a guess","No answer!");
+
+
                 return;
             }
             _questionMarked = false;
@@ -274,13 +272,13 @@ namespace QuizInlamning3.View
             
             ResetColorOnAnswerButtonsAndHover();
 
-            if ((_questionIndex == _questions.Count - 2 && _playerIndex < _quiz.Players.Count -1) )
+            if ((_questionIndex == _questions.Count - 2 && _playerIndex < _players.Count-1) )
             {
                 NextPlayerStyleBtn();
 
             }
 
-            else if (_questionIndex == _questions.Count-2)
+            if (_questionIndex == _questions.Count-2 && _playerIndex == _players.Count -1)
             {
                 FinishQuizStyleBtn();
             }
