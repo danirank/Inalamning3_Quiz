@@ -66,6 +66,7 @@ namespace QuizInlamning3.View
             //_questionIndex = _quiz.GetRandomQuestionIndex(_quiz.Questions,_usedIndexes);
             //_usedIndexes.Add(_questionIndex); //Ändra eftersom frågorna redan ska vara utvalda
             ShowPlayerScore();
+            PercantageScore(GetPercentage());
             ShowNumberOfQuestions();
             QuestionText();
             ShowAnswers(_quiz.GetAnswers(_questions, _questionIndex));
@@ -125,9 +126,25 @@ namespace QuizInlamning3.View
             infoQuestions.Text = $"Question {currenQuestion}/{totalQuestions}";
 
         }
+
+        private double GetPercentage()
+        {
+             double percent = Math.Round((double)_player.NumberOfCorrectAnswers / _questions.Count * 100, 1);
+
+            return percent;
+        }
+
+        private void PercantageScore(double percent)
+        {
+             percent = Math.Round((double)_player.NumberOfCorrectAnswers / _questions.Count * 100, 1);
+
+
+            ScorePercentage.Text =  $" Percantage: {percent}%"; 
+        }
         private void ShowPlayerScore()
         {
-            infoPlayer.Text = _player.Info();
+            infoPlayer.Text = $"{_player.Info()}";
+            
         }
         private void ChangeColorOnBtn(int answer, Button btn)
         {
@@ -183,15 +200,17 @@ namespace QuizInlamning3.View
             }
             return _runQuiz;
         }
-        private void FinishQuiz()
+        private async void FinishQuiz()
         {
 
             
-            //TODO: Spara över
-            _player.HighScore = _player.NumberOfCorrectAnswers;
             
+            _player.HighScore = _player.NumberOfCorrectAnswers;
+            _player.PercentageScore = _player.GetPercentageScore(_questions);
 
-             _playerIndex++;
+            _playerIndex++;
+
+            //Kollar om det finns spelare som inte kört
             CheckPlayerIndex(_playerIndex);
 
             if (_runQuiz)
@@ -199,8 +218,13 @@ namespace QuizInlamning3.View
                 _player = _quiz.Players[_playerIndex];
                 _questionIndex = 0;
                 ShowQuestion();
-            } else
+            } else //Om alla kört, avsluta
             {
+               
+
+
+               
+
                 _navigate(new ShowLeaderBoard(_quiz, _navigate));
             }
             //_quiz.AddPlayerToList(_player);
@@ -300,6 +324,11 @@ namespace QuizInlamning3.View
                 MessageBox.Show("Already locked in one answer");
             }
         }
+
+       
+
+
+        
 
     }
        

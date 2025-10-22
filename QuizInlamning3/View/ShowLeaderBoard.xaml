@@ -35,7 +35,7 @@
                 <TextBlock FontSize="16" FontWeight="Bold">Player Name</TextBlock>
             </Border>
             <Border Grid.Column="2" >
-                <TextBlock FontSize="16" FontWeight="Bold">Score</TextBlock>
+                <TextBlock FontSize="16" FontWeight="Bold">Score (%)</TextBlock>
             </Border>
         </Grid>
 
@@ -54,8 +54,8 @@
               Margin="10">
                     <DataGrid.Columns>
                         <DataGridTextColumn  Binding="{Binding Rank}" Width="*" />
-                        <DataGridTextColumn  Binding="{Binding PlayerName}" Width="*" />
-                        <DataGridTextColumn  Binding="{Binding HighScore}" Width="*" />
+                    <DataGridTextColumn  Binding="{Binding PlayerName}" Width="*" />
+                    <DataGridTextColumn  Binding="{Binding PercentageScore}" Width="*" />
                     </DataGrid.Columns>
                 </DataGrid>
             

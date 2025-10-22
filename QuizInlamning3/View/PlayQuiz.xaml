@@ -92,7 +92,9 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock x:Name="infoPlayer">Score:</TextBlock>
-                <TextBlock Grid.Column="1" x:Name="infoQuestions">Score:</TextBlock>
+                <TextBlock Grid.Column="1" x:Name="infoQuestions">Question:</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="0" x:Name="ScorePercentage">Procent:</TextBlock>
+
             </Grid>
                
             <!--Nästa fråga-->

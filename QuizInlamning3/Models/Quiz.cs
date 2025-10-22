@@ -41,7 +41,7 @@ namespace QuizInlamning3.Models
         //Ranka på highScore för leaderboard
         public List<Player> SortPlayersByHighScore()
         {
-            var players = Players.OrderByDescending(x => x.HighScore).ToList();
+            var players = Players.OrderByDescending(x => x.PercentageScore).ToList();
             int rank = 1;
             int SameScore = 1; 
 
@@ -52,7 +52,7 @@ namespace QuizInlamning3.Models
 
                 var player = players[i];
 
-                if (player.HighScore == players[i - 1].HighScore)
+                if (player.PercentageScore == players[i - 1].PercentageScore)
                 {
                     player.Rank = rank;
                     SameScore++;

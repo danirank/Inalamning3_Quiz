@@ -16,6 +16,8 @@ namespace QuizInlamning3.Models
 
         public int Rank { get; set; }   
 
+        public double PercentageScore { get; set; }
+
         public Player(string playerName, int highScore)
         {
             PlayerName = playerName;
@@ -24,5 +26,13 @@ namespace QuizInlamning3.Models
         }
 
         public string Info() => $"Name: {PlayerName}\nScore: {NumberOfCorrectAnswers}";
+
+        public double GetPercentageScore(List<Question> questions)
+        {
+            int totalQuestions = questions.Count;
+
+            return HighScore * 100 / totalQuestions;
+        }
+
     }
 }

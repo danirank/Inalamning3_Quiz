@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:QuizInlamning3.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid Background="Beige">
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -107,8 +107,8 @@ Margin="10">
 
             <Border>
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock VerticalAlignment="Center">Number of questions: </TextBlock>
-                    <TextBox Width="20" Height="20" x:Name="QuestionCountTxtBox" PreviewTextInput="QuestionQountTxtBox_PreviewTextInput" VerticalAlignment="Center">10</TextBox>
+                    <TextBlock VerticalAlignment="Center" FontSize="20">Number of questions: </TextBlock>
+                    <TextBox Margin="10" Width="80" Height="40" FontSize="20" x:Name="QuestionCountTxtBox" PreviewTextInput="QuestionQountTxtBox_PreviewTextInput" VerticalAlignment="Center"></TextBox>
                 </StackPanel>
             </Border>
             <!--StartBtn-->
