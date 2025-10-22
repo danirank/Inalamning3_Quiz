@@ -68,7 +68,7 @@ namespace QuizInlamning3.View
             //_questionIndex = _quiz.GetRandomQuestionIndex(_quiz.Questions,_usedIndexes);
             //_usedIndexes.Add(_questionIndex); //Ändra eftersom frågorna redan ska vara utvalda
             ShowPlayerScore();
-            PercantageScore(GetPercentage());
+            PercantageScoreToTextBox();
             ShowNumberOfQuestions();
             QuestionText();
             ShowAnswers(_quiz.GetAnswers(_questions, _questionIndex));
@@ -136,9 +136,9 @@ namespace QuizInlamning3.View
             return percent;
         }
 
-        private void PercantageScore(double percent)
+        private void PercantageScoreToTextBox()
         {
-             percent = Math.Round((double)_player.NumberOfCorrectAnswers / _questions.Count * 100, 1);
+           double percent = GetPercentage();
 
 
             ScorePercentage.Text =  $" Percantage: {percent}%"; 
@@ -316,6 +316,8 @@ namespace QuizInlamning3.View
 
                 ChangeColorOnBtn(answer, btn);
                 DisableHover();
+                PercantageScoreToTextBox();
+                ShowPlayerScore();
                 _questionMarked = true;
             } else
             {
