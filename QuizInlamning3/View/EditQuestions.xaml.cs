@@ -134,6 +134,10 @@ namespace QuizInlamning3.View
             
             int questionIndex = ListAllQuestionsText.SelectedIndex; 
             var question = _quiz.Questions[questionIndex];
+            if (question.QType == QType.Image)
+            {
+                question.ImagePath = imageStringTxtbox.Text;
+            }
 
             question.QuestionText = TxtQuestionText.Text;
 
@@ -161,7 +165,7 @@ namespace QuizInlamning3.View
 
             await saveQuestions.SaveAsync(_quiz.Questions, "Data/ImagesQuestions.txt");
         }
-        //TODO
+        
 
         private async void backToMenubtn_Click(object sender, RoutedEventArgs e)
         {

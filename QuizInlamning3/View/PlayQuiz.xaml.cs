@@ -47,7 +47,6 @@ namespace QuizInlamning3.View
 
             if (_questions.Count > 0)
             {
-
              ShowQuestion();
             }
 
@@ -65,8 +64,7 @@ namespace QuizInlamning3.View
       
         private void ShowQuestion()
         {
-            //_questionIndex = _quiz.GetRandomQuestionIndex(_quiz.Questions,_usedIndexes);
-            //_usedIndexes.Add(_questionIndex); //Ändra eftersom frågorna redan ska vara utvalda
+            
             ShowPlayerScore();
             PercantageScoreToTextBox();
             ShowNumberOfQuestions();
