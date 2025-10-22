@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using QuizInlamning3.Models;
+using QuizInlamning3.Services;
 
 namespace QuizInlamning3.View
 {
@@ -25,14 +27,15 @@ namespace QuizInlamning3.View
     {
         private Quiz _quiz;
         private ObservableCollection<Question> _questions;
-        public EditQuestions(Quiz quiz)
+        private Action<UserControl> _navigate;
+        public EditQuestions(Quiz quiz, Action<UserControl> navigate)
         {
             InitializeComponent();
             _quiz = quiz;
-            
+            _navigate = navigate;
             ShowAllQuestions();
             if (_questions.Any())
-                ListAllQuestionsText.SelectedIndex = 1;
+                ListAllQuestionsText.SelectedIndex = 0;
         }
 
         //TODO: Snygga till edit, lägga til nya frågor. Spara
@@ -63,35 +66,116 @@ namespace QuizInlamning3.View
                 imageStringTxtbox.Text = string.Empty;
             }
 
-            for (int i = answersTxtbox.Children.Count - 1; i >= 0; i--)
+            for (int i = AnswerPanel.Children.Count - 1; i >= 0; i--)
             {
-                var child = answersTxtbox.Children[i];
+                var child = AnswerPanel.Children[i];
                 if (!ReferenceEquals(child, TxtQuestionText) &&
                     !ReferenceEquals(child, imageStringTxtbox))
                 {
-                    answersTxtbox.Children.RemoveAt(i);
+                    AnswerPanel.Children.RemoveAt(i);
                 }
             }
 
 
 
+            AnswerPanel.Children.Clear();
+
             for (int i = 0; i < q.Answers.Length; i++)
             {
+                
+                var rowPanel = new StackPanel
+                {
+                    Orientation = Orientation.Horizontal,
+                    Margin = new Thickness(5)
+                };
+
+                
+                var checkBox = new CheckBox
+                {
+                    Margin = new Thickness(5, 0, 10, 0),
+                    IsChecked = (i == q.CorrectAnswerIndex),
+                    Tag = i
+                };
+
+                
                 var tb = new TextBox
                 {
                     Text = q.Answers[i],
-                    Margin = new Thickness(10),
-                
+                    Width = 250,
+                    Margin = new Thickness(5, 0, 0, 0),
+                    Tag = i
                 };
-               
 
-                answersTxtbox.Children.Add(tb);
+                
+                rowPanel.Children.Add(checkBox);
+                rowPanel.Children.Add(tb);
+
+                
+                AnswerPanel.Children.Add(rowPanel);
+            
+                if (checkBox.IsChecked == true)
+                {
+                    tb.Background = new SolidColorBrush(Colors.LightGreen);
+                }
+
+                checkBox.Checked += (s, e) => tb.Background = new SolidColorBrush(Colors.LightGreen);
+                checkBox.Unchecked += (s, e) => tb.Background = new SolidColorBrush(Colors.White);
             }
+
         }
 
         private void ListAllQuestionsText_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ShowAnswers();
+        }
+
+        private void saveChangesBtn_Click(object sender, RoutedEventArgs e)
+        {
+            
+            int questionIndex = ListAllQuestionsText.SelectedIndex; 
+            var question = _quiz.Questions[questionIndex];
+
+            question.QuestionText = TxtQuestionText.Text;
+
+            foreach(StackPanel child in AnswerPanel.Children)
+            {
+                var checkBox = (CheckBox)child.Children[0];
+                var textBox = (TextBox)child.Children[1];
+
+                if (checkBox.IsChecked == true)
+                {
+                    question.CorrectAnswerIndex = (int)checkBox.Tag;
+                }
+
+                question.Answers[(int)textBox.Tag] = textBox.Text;
+            }
+
+            MessageBox.Show("Frågan är uppdaterad");
+
+        }
+
+        private async Task SaveAsync()
+        {
+            ListSaver<Question> saveQuestions = new ListSaver<Question>();
+
+
+            await saveQuestions.SaveAsync(_quiz.Questions, "Data/ImagesQuestions.txt");
+        }
+        //TODO
+
+        private async void backToMenubtn_Click(object sender, RoutedEventArgs e)
+        {
+            // Spara till JSON 
+            try
+            {
+                await SaveAsync();
+                _navigate(new MenuView(_quiz, _navigate));
+
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

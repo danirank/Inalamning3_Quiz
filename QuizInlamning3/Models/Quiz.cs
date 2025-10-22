@@ -25,18 +25,18 @@ namespace QuizInlamning3.Models
         //Kollar om svaret är rätt
         public bool CheckAnswer(int answer, int correctAnswer) => answer == correctAnswer;
 
-        public int CorrectAnswer(int questionIndex) => Questions[questionIndex].CorrectAnswerIndex;
+        public int CorrectAnswer(List<Question> questions, int questionIndex) => questions[questionIndex].CorrectAnswerIndex;
 
         //Lägger till spelare i spelarlistan 
         public void AddPlayerToList(Player player) => Players.Add(player);
 
-        public string ShowQuestionText(int questionIndex) => Questions[questionIndex].QuestionText;
+        public string ShowQuestionText(List<Question> questions, int questionIndex) => questions[questionIndex].QuestionText;
 
-        public bool IsImageQuestion (int questionIndex)
+        public bool IsImageQuestion (List<Question> question,int questionIndex)
         {
-            return Questions[questionIndex].QType == QType.Image;
+            return question[questionIndex].QType == QType.Image;
         }  
-        public string[] GetAnswers(int questionIndex) => Questions[questionIndex].Answers;
+        public string[] GetAnswers(List<Question> questions, int questionIndex) => questions[questionIndex].Answers;
 
         //Ranka på highScore för leaderboard
         public List<Player> SortPlayersByHighScore()

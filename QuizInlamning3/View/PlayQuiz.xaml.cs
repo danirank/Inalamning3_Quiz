@@ -31,6 +31,7 @@ namespace QuizInlamning3.View
         private bool _questionMarked = false;
         private bool _runQuiz = true;
         private Action<UserControl> _navigate;
+        private List<Question> _questions;
         public PlayQuiz(Quiz quiz, List<Question> currentQuestions, Action<UserControl> navigate)
         {
             InitializeComponent();
@@ -38,12 +39,25 @@ namespace QuizInlamning3.View
             _quiz = quiz;
             _navigate = navigate;
             _player = _quiz.Players[_playerIndex]; 
-            _quiz.Questions = currentQuestions;
+            _questions = currentQuestions;
             
             ResetColorOnAnswerButtonsAndHover();
-            ShowQuestion();
 
+            if (_questions.Count > 0)
+            {
 
+             ShowQuestion();
+            }
+
+            if (_questions.Count == 1)
+            {
+                NextPlayerStyleBtn();
+            }
+
+            if (_questions.Count == 1 && _quiz.Players.Count==1)
+            {
+                FinishQuizStyleBtn();
+            }
         }
 
       
@@ -54,17 +68,17 @@ namespace QuizInlamning3.View
             ShowPlayerScore();
             ShowNumberOfQuestions();
             QuestionText();
-            ShowAnswers(_quiz.GetAnswers(_questionIndex));
+            ShowAnswers(_quiz.GetAnswers(_questions, _questionIndex));
 
 
         }
         private void QuestionText()
         {
-            questionTxtBox.Text = _quiz.ShowQuestionText(_questionIndex);
+            questionTxtBox.Text = _quiz.ShowQuestionText(_questions,_questionIndex);
 
-            if (_quiz.IsImageQuestion(_questionIndex))
+            if (_quiz.IsImageQuestion(_questions, _questionIndex))
             {
-                var imagePath = _quiz.Questions[_questionIndex].ImagePath;
+                var imagePath = _questions[_questionIndex].ImagePath;
                 var fullPath = System.IO.Path.GetFullPath(imagePath);
                 imageQuestion.Source = new BitmapImage(new Uri (fullPath, UriKind.RelativeOrAbsolute));
                 imageQuestion.Visibility = Visibility.Visible;  
@@ -106,7 +120,7 @@ namespace QuizInlamning3.View
         {
             
             int currenQuestion = _questionIndex + 1;
-            int totalQuestions = _quiz.Questions.Count;
+            int totalQuestions = _questions.Count;
 
             infoQuestions.Text = $"Question {currenQuestion}/{totalQuestions}";
 
@@ -118,7 +132,7 @@ namespace QuizInlamning3.View
         private void ChangeColorOnBtn(int answer, Button btn)
         {
             
-            int correctAnswer = _quiz.CorrectAnswer(_questionIndex);
+            int correctAnswer = _quiz.CorrectAnswer(_questions,_questionIndex);
            
             Button[] buttons = {answerIdx0Btn,answerIdx1Btn,answerIdx2Btn,answerIdx3Btn };
             Button correctButton = null;
@@ -194,26 +208,60 @@ namespace QuizInlamning3.View
             
 
         }
+        private void NextPlayerStyleBtn()
+        {
+            
+
+            NextQuestionBtn.Content = "Next player";
+            NextQuestionBtn.Background = new SolidColorBrush(Colors.Black);
+            NextQuestionBtn.Foreground = new SolidColorBrush(Colors.White);
+            
+            
+        }
+
+        private void NextQuestionStyleBtn()
+        {
+            NextQuestionBtn.Content = "Next question";
+            NextQuestionBtn.ClearValue(Button.BackgroundProperty);
+            NextQuestionBtn.ClearValue(Button.ForegroundProperty);
+            
+
+        }
+
+        private void FinishQuizStyleBtn()
+        {
+            NextQuestionBtn.Content = "Fisnish quiz";
+            NextQuestionBtn.Background = new SolidColorBrush(Colors.Violet);
+
+
+        }
         private void NextQuestionBtn_Click(object sender, RoutedEventArgs e)
         {
+            NextQuestionStyleBtn();
 
             if (!_questionMarked)
             {
+
                 MessageBox.Show("At least take a guess","No answer!");
                 return;
             }
             _questionMarked = false;
-            string finishQuiz = "Finish quiz";
-
+            
+            
             ResetColorOnAnswerButtonsAndHover();
 
-            
-            if (_questionIndex == _quiz.Questions.Count-2)
+            if ((_questionIndex == _questions.Count - 2 && _playerIndex < _quiz.Players.Count -1) )
             {
-                NextQuestionBtn.Content = finishQuiz;
+                NextPlayerStyleBtn();
+
             }
 
-            if (_questionIndex == _quiz.Questions.Count-1)
+            else if (_questionIndex == _questions.Count-2)
+            {
+                FinishQuizStyleBtn();
+            }
+
+            if (_questionIndex == _questions.Count-1)
             {
                 FinishQuiz();
                 return;
@@ -221,14 +269,15 @@ namespace QuizInlamning3.View
             }
             _questionIndex++;
             ShowQuestion();
-            //TODO: Logik för när nästa spelare tar över 
+            
+             
 
            
 
 
         }
 
-        //TODO: Bygg ihop med RunQuiz? 
+        
         private void answerBtn_Click(object sender, RoutedEventArgs e)
         {
             
@@ -238,7 +287,7 @@ namespace QuizInlamning3.View
                 
                 var btn = (Button)sender;
                 int answer = int.Parse(btn.Tag.ToString());
-                int correctAnswer = _quiz.CorrectAnswer(_questionIndex);
+                int correctAnswer = _quiz.CorrectAnswer(_questions,_questionIndex);
                 bool isCorrect = _quiz.CheckAnswer(answer, correctAnswer);
 
                 if (isCorrect) _player.NumberOfCorrectAnswers++;

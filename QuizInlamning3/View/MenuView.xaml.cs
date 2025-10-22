@@ -45,7 +45,7 @@ namespace QuizInlamning3.View
         {
             //EditQuestions editQuestions = new EditQuestions(_quiz);
             //Content = editQuestions;
-            _navigate(new EditQuestions(_quiz));
+            _navigate(new EditQuestions(_quiz,_navigate));
         }
 
         private void leaderboardBtn_Click(object sender, RoutedEventArgs e)

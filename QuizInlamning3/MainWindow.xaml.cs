@@ -36,17 +36,22 @@ namespace QuizInlamning3
 
         private async void MainLoaded(object sender, RoutedEventArgs e)
         {
+            
+                _quiz = await LoadQuizAsync();
 
-            _quiz = await LoadQuizAsync();
+            
+
             MainContent.Content = new MenuView(_quiz, Navigate);
 
         }
         private async Task<Quiz> LoadQuizAsync()
         {
+            try
+            {
             var playerLoader = new ListLoader<Player>();
             var questionLoader = new ListLoader<Question>();
-
-            //Laddar ALLA frågor och tidigare spelare
+            
+                //Laddar ALLA frågor och tidigare spelare
             var questionsTask = questionLoader.LoadAsync("Data/ImagesQuestions.txt");
             var playersTask = playerLoader.LoadAsync("Data/Players.txt");
 
@@ -54,6 +59,13 @@ namespace QuizInlamning3
             var players = await playersTask;
 
             return new Quiz(questions, players);
+
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return null;
+
         }
 
         public void Navigate(UserControl newView)

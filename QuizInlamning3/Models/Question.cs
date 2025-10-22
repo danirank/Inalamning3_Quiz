@@ -37,30 +37,30 @@ namespace QuizInlamning3.Models
 
         public int CorrectAnswerIndex {  get; set; }
 
-        public Question() { }
+        //public Question() { }
 
-        //Konstruktor för textfrågor
-        public Question(Category category, QType type, string questionText, string[] answers, int correctAnswerIndex)
-        {
-            Category = category;
-            QType = type;
-            QuestionText = questionText;
-            Answers = answers;
-            CorrectAnswerIndex = correctAnswerIndex;
+        ////Konstruktor för textfrågor
+        //public Question(Category category, QType type, string questionText, string[] answers, int correctAnswerIndex)
+        //{
+        //    Category = category;
+        //    QType = type;
+        //    QuestionText = questionText;
+        //    Answers = answers;
+        //    CorrectAnswerIndex = correctAnswerIndex;
 
-        }
+        //}
 
-        //Konstruktor för bildfrågor
-        public Question(Category category, QType type, string questionText, string imagePath, string[] answers, int correctAnswerIndex)
-        {
-            Category = category;
-            QType = type;
-            QuestionText = questionText;
-            ImagePath = imagePath;
-            Answers = answers;
-            CorrectAnswerIndex = correctAnswerIndex;
+        ////Konstruktor för bildfrågor
+        //public Question(Category category, QType type, string questionText, string imagePath, string[] answers, int correctAnswerIndex)
+        //{
+        //    Category = category;
+        //    QType = type;
+        //    QuestionText = questionText;
+        //    ImagePath = imagePath;
+        //    Answers = answers;
+        //    CorrectAnswerIndex = correctAnswerIndex;
 
-        }
+        //}
 
     }
 

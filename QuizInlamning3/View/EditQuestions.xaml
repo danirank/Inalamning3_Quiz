@@ -50,13 +50,18 @@
                      Padding="4"
                      SelectionChanged="ListAllQuestionsText_SelectionChanged"/>
             </Border>
-
+            <StackPanel Grid.Column="1" Grid.Row="1">
             <!-- Alternativ -->
             <StackPanel Margin="10" x:Name="answersTxtbox" Grid.Row="1" Grid.Column="1">
                 <TextBox x:Name="TxtQuestionText"/>
                 <TextBox x:Name="imageStringTxtbox"></TextBox>
+                    <StackPanel x:Name="AnswerPanel"/>
+                </StackPanel>
+                <Button x:Name="saveChangesBtn" Click="saveChangesBtn_Click">Spara ändringar</Button>
             </StackPanel>
         </Grid>
+
+        <Button x:Name="backToMenubtn" Click="backToMenubtn_Click" Grid.Row="2"> Tillbaka till menyn</Button>
     </Grid>
 
 </UserControl>
