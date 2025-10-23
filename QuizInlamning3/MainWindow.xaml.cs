@@ -68,6 +68,8 @@ namespace QuizInlamning3
 
         }
 
+        
+
         public void Navigate(UserControl newView)
         {
             MainContent.Content = newView; 
