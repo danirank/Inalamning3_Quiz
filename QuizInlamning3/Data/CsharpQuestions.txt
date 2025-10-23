@@ -1,0 +1,339 @@
+﻿[
+  {
+    "Category": "Datatyper",
+    "QType": "Text",
+    "QuestionText": "Vilken datatyp används för heltal i C#?",
+    "Answers": ["double", "int", "string", "bool"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "Datatyper",
+    "QType": "Text",
+    "QuestionText": "Vilken datatyp används för textsträngar i C#?",
+    "Answers": ["char", "text", "string", "var"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "Datatyper",
+    "QType": "Text",
+    "QuestionText": "Vilken datatyp används för sant/falskt värde?",
+    "Answers": ["binary", "flag", "bool", "condition"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "Operatorer",
+    "QType": "Text",
+    "ImagePath": "Images/Csharp/dataTypescsharp.png",
+    "Answers": ["=", "==", "!=", "==="],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "Operatorer",
+    "QType": "Text",
+    "QuestionText": "Vilken operator används för att öka ett tal med 1?",
+    "Answers": ["++", "+=", "inc", "--"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Variabler",
+    "QType": "Text",
+    "QuestionText": "Vilket nyckelord används för att deklarera en variabel med typinferens?",
+    "Answers": ["let", "auto", "var", "dynamic"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "Variabler",
+    "QType": "Image",
+    "QuestionText": "Vilken variabeldeklaration är korrekt enligt C#-syntax?",
+    "ImagePath": "Images/Csharp/dataTypescsharp.png",
+    "Answers": ["int x = 5;", "x int = 5;", "declare int x = 5;", "int = x 5;"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "KlasserOchObjekt",
+    "QType": "Text",
+    "QuestionText": "Vilket nyckelord används för att skapa en ny instans av en klass?",
+    "Answers": ["create", "instanceof", "new", "init"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "KlasserOchObjekt",
+    "QType": "Image",
+    "QuestionText": "Vad kallas den metod som körs när ett objekt skapas?",
+    "ImagePath": "Images/Csharp/constructor.png",
+    "Answers": ["Constructor", "Destructor", "Initializer", "Main"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "KlasserOchObjekt",
+    "QType": "Text",
+    "QuestionText": "Vad betyder 'this' i en klassmetod?",
+    "Answers": ["Pekar på en annan klass", "Pekar på nuvarande objekt", "Pekar på en statisk metod", "Anger basklassen"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "Arv",
+    "QType": "Text",
+    "QuestionText": "Vilket nyckelord används för att ärva från en annan klass?",
+    "Answers": ["inherits", "extends", "base", ":"],
+    "CorrectAnswerIndex": 3
+  },
+  {
+    "Category": "Arv",
+    "QType": "Image",
+    "QuestionText": "Vad kallas den klass som en annan klass ärver från?",
+    "ImagePath": "Images/Csharp/parentClass.png",
+    "Answers": ["Parent class", "Derived class", "Child class", "Virtual class"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Polymorfism",
+    "QType": "Text",
+    "QuestionText": "Vilket nyckelord gör en metod möjlig att skriva över i en subklass?",
+    "Answers": ["override", "virtual", "abstract", "sealed"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "Polymorfism",
+    "QType": "Text",
+    "QuestionText": "Vilket nyckelord används för att skriva över en metod från basklassen?",
+    "Answers": ["super", "override", "extends", "virtual"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "Interface",
+    "QType": "Image",
+    "QuestionText": "Vilket nyckelord används för att skapa ett interface?",
+    "ImagePath": "Images/Csharp/interface.png",
+    "Answers": ["interface", "contract", "abstract", "define"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Interface",
+    "QType": "Text",
+    "QuestionText": "Kan ett interface innehålla implementationer i C#?",
+    "Answers": ["Ja, alltid", "Nej, aldrig", "Ja, med default-metoder (C# 8+)", "Endast med arv"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "Abstraktion",
+    "QType": "Text",
+    "QuestionText": "Vilket nyckelord används för att skapa en abstrakt klass?",
+    "Answers": ["virtual", "abstract", "sealed", "partial"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "Abstraktion",
+    "QType": "Image",
+    "QuestionText": "Vilken metod måste implementeras i en klass som ärver från en abstrakt klass?",
+    "ImagePath": "Images/abstract_method.jpg",
+    "Answers": ["Virtual", "Private", "Abstract", "Static"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "Collections",
+    "QType": "Text",
+    "QuestionText": "Vilken samling används för att lagra nyckel-värde-par?",
+    "Answers": ["List", "Stack", "Dictionary", "Array"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "Collections",
+    "QType": "Image",
+    "QuestionText": "Vilken typ av samling används för ordnade element med index?",
+    "ImagePath": "Images/Csharp/list.png",
+    "Answers": ["Queue", "Stack", "List", "Dictionary"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "LINQ",
+    "QType": "Text",
+    "QuestionText": "Vad står LINQ för?",
+    "Answers": ["Language Integrated Query", "Linked Internal Queries", "Language Indexed Query", "Logical Interface Query"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "LINQ",
+    "QType": "Image",
+    "QuestionText": "Vilken metod används för att filtrera resultat i LINQ?",
+    "ImagePath": "Images/Csharp/linq.jpg",
+    "Answers": ["Select()", "Where()", "OrderBy()", "GroupBy()"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "Delegater",
+    "QType": "Text",
+    "QuestionText": "Vad är en delegate i C#?",
+    "Answers": ["En datatyp", "En pekare till metod", "En händelse", "En klass"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "Events",
+    "QType": "Text",
+    "QuestionText": "Vilket nyckelord används för att skapa en händelse (event)?",
+    "Answers": ["trigger", "delegate", "event", "invoke"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "Events",
+    "QType": "Image",
+    "QuestionText": "Vad krävs för att ett event ska kunna anropas?",
+    "ImagePath": "Images/Csharp/event_invoke.png",
+    "Answers": ["Den måste vara null", "Den måste ha en prenumerant", "Den måste vara static", "Den måste vara sealed"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "AsyncAwait",
+    "QType": "Text",
+    "QuestionText": "Vilket nyckelord används för att markera en asynkron metod?",
+    "Answers": ["task", "async", "await", "background"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "AsyncAwait",
+    "QType": "Text",
+    "QuestionText": "Vad gör nyckelordet 'await'?",
+    "Answers": ["Startar en ny tråd", "Pausar tills en Task är klar", "Skapar en ny Task", "Avbryter metoden"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "Felhantering",
+    "QType": "Image",
+    "QuestionText": "Vilka nyckelord används för att fånga undantag?",
+    "ImagePath": "Images/Csharp/error.jpg",
+    "Answers": ["catch/try", "throw/catch", "try/catch", "error/handle"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "Felhantering",
+    "QType": "Text",
+    "QuestionText": "Vilket nyckelord används för att kasta ett undantag?",
+    "Answers": ["raise", "throw", "error", "alert"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "FilerOchIO",
+    "QType": "Text",
+    "QuestionText": "Vilken klass används för att läsa text från en fil?",
+    "Answers": ["FileReader", "TextInput", "StreamReader", "FileLoader"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "FilerOchIO",
+    "QType": "Text",
+    "QuestionText": "Vilken metod används för att läsa hela filen som en sträng?",
+    "Answers": ["File.ReadAllText()", "File.Read()", "StreamReader.Read()", "File.GetText()"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Generics",
+    "QType": "Text",
+    "QuestionText": "Vad gör generics möjliga i C#?",
+    "Answers": ["Att skapa kod som fungerar med flera datatyper", "Att använda flera trådar", "Att skriva LINQ-frågor", "Att skapa polymorfa klasser"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Generics",
+    "QType": "Image",
+    "QuestionText": "Vilken syntax används för en generisk klass?",
+    "ImagePath": "Images/Csharp/generics.png",
+    "Answers": ["class MyClass()", "class MyClass<T>", "class<T> MyClass", "generic MyClass"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "Static",
+    "QType": "Text",
+    "QuestionText": "Vad betyder att en metod är 'static'?",
+    "Answers": ["Den kan inte ärvas", "Den tillhör klassen, inte instansen", "Den är privat", "Den kan inte anropas"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "Static",
+    "QType": "Image",
+    "QuestionText": "Vilken av dessa metoder är statisk?",
+    "ImagePath": "Images/Csharp/static.jpg",
+    "Answers": ["void Print()", "static void Print()", "public Print()", "async Print()"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "PartialClasses",
+    "QType": "Text",
+    "QuestionText": "Vad är syftet med 'partial class'?",
+    "Answers": ["Att dela upp en klass över flera filer", "Att ärva flera klasser", "Att optimera minne", "Att skapa generiska typer"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Records",
+    "QType": "Text",
+    "QuestionText": "Vad skiljer en 'record' från en klass i C#?",
+    "Answers": ["Records är värdetyper", "Records har automatisk likhetsjämförelse", "Records kan inte innehålla metoder", "Records är asynkrona"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "Records",
+    "QType": "Image",
+    "QuestionText": "Vilket nyckelord används för att skapa en record?",
+    "ImagePath": "Images/Csharp/record.png",
+    "Answers": ["class", "struct", "record", "object"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "Properties",
+    "QType": "Text",
+    "QuestionText": "Vilket nyckelord används för att skapa en egenskap (property)?",
+    "Answers": ["get/set", "field", "prop", "property"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Properties",
+    "QType": "Image",
+    "QuestionText": "Vilken egenskap är korrekt definierad?",
+    "ImagePath": "Images/Csharp/properties.jpg",
+    "Answers": ["public int Age {get; set;}", "public int Age(get; set;)", "int Age = getset;", "property Age;"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Enums",
+    "QType": "Text",
+    "QuestionText": "Vad används en enum till?",
+    "Answers": ["Att skapa metoder", "Att definiera en uppsättning namngivna värden", "Att skapa databaskopplingar", "Att skapa events"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "Enums",
+    "QType": "Image",
+    "QuestionText": "Vilken syntax är korrekt för en enum?",
+    "ImagePath": "Images/Csharp/enum.jpg",
+    "Answers": ["enum Color { Red, Blue }", "Color enum { Red, Blue }", "class enum Color()", "new enum Color"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "MinneOchGC",
+    "QType": "Text",
+    "QuestionText": "Vad gör Garbage Collectorn (GC)?",
+    "Answers": ["Tar bort oanvänd kod", "Frigör minne från objekt som inte används", "Ökar CPU-prestanda", "Komprimerar filer"],
+    "CorrectAnswerIndex": 1
+  },
+  {
+    "Category": "MinneOchGC",
+    "QType": "Image",
+    "QuestionText": "Vilket nyckelord används för att frigöra resurser manuellt?",
+    "ImagePath": "Images/Csharp/dispose.jpg",
+    "Answers": ["free", "delete", "dispose", "release"],
+    "CorrectAnswerIndex": 2
+  },
+  {
+    "Category": "Reflektion",
+    "QType": "Text",
+    "QuestionText": "Vad kan Reflection användas till?",
+    "Answers": ["Att läsa metadata och typer vid runtime", "Att förbättra prestanda", "Att skapa UI-komponenter", "Att hantera fel"],
+    "CorrectAnswerIndex": 0
+  },
+  {
+    "Category": "Attributes",
+    "QType": "Text",
+    "QuestionText": "Vilken syntax används för att definiera ett attribut?",
+    "Answers": ["(Serializable)", "[Serializable]", "{Serializable}", "<Serializable>"],
+    "CorrectAnswerIndex": 1
+  }
+]

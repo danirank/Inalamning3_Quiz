@@ -8,18 +8,45 @@ using System.Text.Json;
 
 namespace QuizInlamning3.Models
 {
+    //public enum Category
+    //{
+
+    //    GeneralKnowledge,
+    //    FoodAndDrink,
+    //    Sports,
+    //    Animals,
+    //    Geography,
+    //    ScienceAndNature
+    //}
     public enum Category
     {
-       
-        GeneralKnowledge,
-        FoodAndDrink,
-        Sports,
-        Animals,
-        Geography,
-        ScienceAndNature
+        Datatyper,
+        Operatorer,
+        Variabler,
+        KlasserOchObjekt,
+        Arv,
+        Polymorfism,
+        Interface,
+        Abstraktion,
+        Collections,
+        LINQ,
+        Delegater,
+        Events,
+        AsyncAwait,
+        Felhantering,
+        FilerOchIO,
+        Generics,
+        Static,
+        PartialClasses,
+        Records,
+        Properties,
+        Enums,
+        MinneOchGC,
+        Reflektion,
+        Attributes
     }
 
-   public enum QType
+    public enum QType
     {
         Text, Image 
     }
@@ -37,30 +64,7 @@ namespace QuizInlamning3.Models
 
         public int CorrectAnswerIndex {  get; set; }
 
-        //public Question() { }
-
-        ////Konstruktor för textfrågor
-        //public Question(Category category, QType type, string questionText, string[] answers, int correctAnswerIndex)
-        //{
-        //    Category = category;
-        //    QType = type;
-        //    QuestionText = questionText;
-        //    Answers = answers;
-        //    CorrectAnswerIndex = correctAnswerIndex;
-
-        //}
-
-        ////Konstruktor för bildfrågor
-        //public Question(Category category, QType type, string questionText, string imagePath, string[] answers, int correctAnswerIndex)
-        //{
-        //    Category = category;
-        //    QType = type;
-        //    QuestionText = questionText;
-        //    ImagePath = imagePath;
-        //    Answers = answers;
-        //    CorrectAnswerIndex = correctAnswerIndex;
-
-        //}
+        
 
     }
 

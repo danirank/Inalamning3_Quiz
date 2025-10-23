@@ -35,10 +35,16 @@ namespace QuizInlamning3.View
             _navigate = navigate;
             ShowAllQuestions();
             if (_questions.Any())
+            {
+
                 ListAllQuestionsText.SelectedIndex = 0;
+            } else
+            {
+                MessageBox.Show("No questions availible");
+            }
         }
 
-        //TODO: Snygga till edit, lägga til nya frågor. Spara
+        
         private void ShowAllQuestions()
         {
             _questions = new ObservableCollection<Question>(_quiz.Questions);
@@ -129,6 +135,13 @@ namespace QuizInlamning3.View
             ShowAnswers();
         }
 
+        private async Task SaveAsync()
+        {
+            ListSaver<Question> saveQuestions = new ListSaver<Question>();
+
+
+            await saveQuestions.SaveAsync(_quiz.Questions, "Data/ImagesQuestions.txt");
+        }
         private void saveChangesBtn_Click(object sender, RoutedEventArgs e)
         {
             
@@ -158,13 +171,6 @@ namespace QuizInlamning3.View
 
         }
 
-        private async Task SaveAsync()
-        {
-            ListSaver<Question> saveQuestions = new ListSaver<Question>();
-
-
-            await saveQuestions.SaveAsync(_quiz.Questions, "Data/ImagesQuestions.txt");
-        }
         
 
         private async void backToMenubtn_Click(object sender, RoutedEventArgs e)
