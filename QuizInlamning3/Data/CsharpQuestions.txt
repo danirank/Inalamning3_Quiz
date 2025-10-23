@@ -23,6 +23,7 @@
   {
     "Category": "Operatorer",
     "QType": "Text",
+    "QuestionText": "Hur jämför man om två objekt är lika i c#?"
     "ImagePath": "Images/Csharp/dataTypescsharp.png",
     "Answers": ["=", "==", "!=", "==="],
     "CorrectAnswerIndex": 1
@@ -124,9 +125,8 @@
   },
   {
     "Category": "Abstraktion",
-    "QType": "Image",
+    "QType": "Text",
     "QuestionText": "Vilken metod måste implementeras i en klass som ärver från en abstrakt klass?",
-    "ImagePath": "Images/abstract_method.jpg",
     "Answers": ["Virtual", "Private", "Abstract", "Static"],
     "CorrectAnswerIndex": 2
   },
@@ -200,7 +200,7 @@
     "Category": "Felhantering",
     "QType": "Image",
     "QuestionText": "Vilka nyckelord används för att fånga undantag?",
-    "ImagePath": "Images/Csharp/error.jpg",
+    "ImagePath": "Images/Csharp/error.png",
     "Answers": ["catch/try", "throw/catch", "try/catch", "error/handle"],
     "CorrectAnswerIndex": 2
   },
