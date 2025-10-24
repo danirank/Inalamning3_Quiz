@@ -23,7 +23,7 @@
   {
     "Category": "Operatorer",
     "QType": "Text",
-    "QuestionText": "Hur jämför man om två objekt är lika i c#?"
+    "QuestionText": "Hur jämför man om två objekt är lika i c#?",
     "ImagePath": "Images/Csharp/dataTypescsharp.png",
     "Answers": ["=", "==", "!=", "==="],
     "CorrectAnswerIndex": 1

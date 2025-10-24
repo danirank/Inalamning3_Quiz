@@ -130,17 +130,17 @@ namespace QuizInlamning3.View
 
         }
 
-        private void ListAllQuestionsText_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ShowAnswers();
-        }
-
         private async Task SaveAsync()
         {
             ListSaver<Question> saveQuestions = new ListSaver<Question>();
 
 
             await saveQuestions.SaveAsync(_quiz.Questions, "Data/ImagesQuestions.txt");
+        }
+
+        private void ListAllQuestionsText_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ShowAnswers();
         }
         private void saveChangesBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -171,7 +171,6 @@ namespace QuizInlamning3.View
 
         }
 
-        
 
         private async void backToMenubtn_Click(object sender, RoutedEventArgs e)
         {
