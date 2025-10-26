@@ -41,6 +41,7 @@ namespace QuizInlamning3
             
                 _quiz = await LoadQuizAsync();
 
+                await QuizNames.LoadAsync();
             
 
             MainContent.Content = new MenuView(_quiz, Navigate);

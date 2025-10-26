@@ -30,7 +30,8 @@ namespace QuizInlamning3.View
         private Action<UserControl> _navigate;
         private bool _isCreatingNewQuiz = false;
         private List<Question> _newQuizQuestions;
-        private bool _isNameConfirmed = false;
+        private bool _isNameConfirmed = true;
+        
         public EditQuestions(Quiz quiz, Action<UserControl> navigate)
         {
             InitializeComponent();
@@ -58,13 +59,13 @@ namespace QuizInlamning3.View
         }
         private void ShowQuizezBtn()
         {
-            List<string> quizNames = QuizNames.Names.Skip(1).ToList();
-            foreach (string quizName in quizNames)
+            List<QuizNamesItems> quizNames = QuizNames.Names.Skip(1).ToList();
+            foreach (var quizName in quizNames)
             {
                 
                 Button btn = new Button()
                 {
-                    Content = quizName,
+                    Content = quizName.Name,
                     
                 };
 
@@ -211,10 +212,12 @@ namespace QuizInlamning3.View
         }
         private async Task SaveAsync()
         {
+            List<QuizNamesItems> names = new List<QuizNamesItems>(QuizNames.Names);
 
-            ListSaver<Question> saveQuestions = new ListSaver<Question>();
-
+            ListSaver<QuizNamesItems> saveQuizNames = new ListSaver<QuizNamesItems>();
+            await saveQuizNames.SaveAsync(names, "Data/QuizNames.txt");
             
+            ListSaver<Question> saveQuestions = new ListSaver<Question>();
             await saveQuestions.SaveAsync(_quiz.Questions, $"Data/{_quiz.Name}.txt");
         }
         public void SaveQuestionToList()
@@ -321,6 +324,7 @@ namespace QuizInlamning3.View
 
             _newQuizQuestions = new List<Question>();
             _isCreatingNewQuiz = true;
+            _isNameConfirmed = false;
             
             Header.Text = "New quiz";
             NameNewQuiz();
@@ -368,7 +372,7 @@ namespace QuizInlamning3.View
             Header.Text = _quiz.Name;
             newQuizName.Visibility = Visibility.Collapsed;
             btn.Visibility = Visibility.Collapsed;
-            QuizNames.Names.Add(_quiz.Name);
+            QuizNames.Names.Add(new QuizNamesItems { Name = _quiz.Name});
             _isNameConfirmed = true;
         }
        

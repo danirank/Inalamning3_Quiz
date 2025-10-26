@@ -107,7 +107,6 @@
     <Compile Include="Services\ISaver.cs" />
     <Compile Include="Services\ListLoader.cs" />
     <Compile Include="Services\ListSaver.cs" />
-    <Compile Include="Services\QuestionLoader.cs" />
     <Compile Include="View\EditQuestions.xaml.cs">
       <DependentUpon>EditQuestions.xaml</DependentUpon>
     </Compile>
@@ -191,6 +190,9 @@
     <Content Include="Data\GeneralKnowledge.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Data\QuizNames.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\africa_map.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -269,7 +271,7 @@
     <Content Include="Images\moon_phases.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Mockup\MockupQuiz.drawio.png" />
+    <Resource Include="Mockup\MockupQuizFlowChart.drawio.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

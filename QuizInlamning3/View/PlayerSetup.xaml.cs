@@ -117,7 +117,7 @@ namespace QuizInlamning3.View
             Random r = new Random();
             var allowedCategories = _selectedCategories; 
 
-            var questions = _quiz.Questions.Where(x => allowedCategories.Contains(x.Category)).ToList();
+            var questions =_currentQuestions.Where(x => allowedCategories.Contains(x.Category)).ToList();
 
             int maxQuizQuestions = questions.Count;
 
