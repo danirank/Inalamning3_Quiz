@@ -102,6 +102,7 @@
     </ApplicationDefinition>
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Quiz.cs" />
+    <Compile Include="Models\QuizNames.cs" />
     <Compile Include="Services\ILoader.cs" />
     <Compile Include="Services\ISaver.cs" />
     <Compile Include="Services\ListLoader.cs" />
@@ -118,9 +119,6 @@
     </Compile>
     <Compile Include="View\PlayQuiz.xaml.cs">
       <DependentUpon>PlayQuiz.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\QuizSummary.xaml.cs">
-      <DependentUpon>QuizSummary.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ShowLeaderBoard.xaml.cs">
       <DependentUpon>ShowLeaderBoard.xaml</DependentUpon>
@@ -150,10 +148,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PlayQuiz.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\QuizSummary.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -194,7 +188,7 @@
     <Content Include="Data\CsharpQuestions.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Data\ImagesQuestions.txt">
+    <Content Include="Data\GeneralKnowledge.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\africa_map.jpg">

@@ -89,33 +89,12 @@ namespace QuizInlamning3.View
             }
           
         }
-        private void DisableHover()
-        {
-            foreach (var b in new[] { answerIdx0Btn, answerIdx1Btn, answerIdx2Btn, answerIdx3Btn })
-            {
-                b.IsHitTestVisible = false; 
-                
-            }
-
-        }
         private void ShowAnswers(string[] answers)
         {
             answerIdx0Btn.Content = answers[0];
             answerIdx1Btn.Content = answers[1];
             answerIdx2Btn.Content = answers[2];
             answerIdx3Btn.Content = answers[3];
-        }
-        private void ResetColorOnAnswerButtonsAndHover()
-        {
-            answerIdx0Btn.Background = Brushes.LightBlue;
-            answerIdx1Btn.Background = Brushes.Yellow;
-            answerIdx2Btn.Background = Brushes.Orange; 
-            answerIdx3Btn.Background = Brushes.LightCoral;
-
-            foreach (var b in new[] { answerIdx0Btn, answerIdx1Btn, answerIdx2Btn, answerIdx3Btn })
-            {
-                b.IsHitTestVisible = true;
-            }
         }
         private void ShowNumberOfQuestions()
         {
@@ -126,14 +105,12 @@ namespace QuizInlamning3.View
             infoQuestions.Text = $"Question {currenQuestion}/{totalQuestions}";
 
         }
-
         private double GetPercentage()
         {
              double percent = Math.Round((double)_player.NumberOfCorrectAnswers / _questions.Count * 100, 1);
 
             return percent;
         }
-
         private void PercantageScoreToTextBox()
         {
            double percent = GetPercentage();
@@ -145,47 +122,6 @@ namespace QuizInlamning3.View
         {
             infoPlayer.Text = $"{_player.Info()}";
             
-        }
-        private void ChangeColorOnBtn(int answer, Button btn)
-        {
-            
-            int correctAnswer = _quiz.CorrectAnswer(_questions,_questionIndex);
-           
-            Button[] buttons = {answerIdx0Btn,answerIdx1Btn,answerIdx2Btn,answerIdx3Btn };
-            Button correctButton = null;
-
-            switch (correctAnswer)
-            {
-                case 0:
-                    correctButton = answerIdx0Btn;
-                    break;
-                case 1:
-                    correctButton = answerIdx1Btn;
-                    break;
-                case 2:
-                    correctButton = answerIdx2Btn;
-                    break;
-                case 3:
-                    correctButton = answerIdx3Btn;
-                    break;
-            }
-
-            foreach (Button button in buttons)
-            {
-                if (button == correctButton)
-                {
-                    button.Background = Brushes.ForestGreen;
-                    
-
-                }
-                else
-                {
-                    button.Background = Brushes.Red;
-                }
-
-            }
-
-
         }
 
         private bool CheckPlayerIndex(int index)
@@ -227,33 +163,8 @@ namespace QuizInlamning3.View
             
 
         }
-        private void NextPlayerStyleBtn()
-        {
-            
-
-            NextQuestionBtn.Content = "Next player";
-            NextQuestionBtn.Background = new SolidColorBrush(Colors.Black);
-            NextQuestionBtn.Foreground = new SolidColorBrush(Colors.White);
-            
-            
-        }
-
-        private void NextQuestionStyleBtn()
-        {
-            NextQuestionBtn.Content = "Next question";
-            NextQuestionBtn.ClearValue(Button.BackgroundProperty);
-            NextQuestionBtn.ClearValue(Button.ForegroundProperty);
-            
-
-        }
-
-        private void FinishQuizStyleBtn()
-        {
-            NextQuestionBtn.Content = "Fisnish quiz";
-            NextQuestionBtn.Background = new SolidColorBrush(Colors.Violet);
 
 
-        }
         private void NextQuestionBtn_Click(object sender, RoutedEventArgs e)
         {
             NextQuestionStyleBtn();
@@ -296,8 +207,7 @@ namespace QuizInlamning3.View
 
 
         }
-
-        
+ 
         private void answerBtn_Click(object sender, RoutedEventArgs e)
         {
             
@@ -324,8 +234,95 @@ namespace QuizInlamning3.View
         }
 
        
+        //Style
+        private void FinishQuizStyleBtn()
+        {
+            NextQuestionBtn.Content = "Fisnish quiz";
+            NextQuestionBtn.Background = new SolidColorBrush(Colors.Violet);
 
 
+        }
+        private void ChangeColorOnBtn(int answer, Button btn)
+        {
+            
+            int correctAnswer = _quiz.CorrectAnswer(_questions,_questionIndex);
+           
+            Button[] buttons = {answerIdx0Btn,answerIdx1Btn,answerIdx2Btn,answerIdx3Btn };
+            Button correctButton = null;
+
+            switch (correctAnswer)
+            {
+                case 0:
+                    correctButton = answerIdx0Btn;
+                    break;
+                case 1:
+                    correctButton = answerIdx1Btn;
+                    break;
+                case 2:
+                    correctButton = answerIdx2Btn;
+                    break;
+                case 3:
+                    correctButton = answerIdx3Btn;
+                    break;
+            }
+
+            foreach (Button button in buttons)
+            {
+                if (button == correctButton)
+                {
+                    button.Background = Brushes.ForestGreen;
+                    
+
+                }
+                else
+                {
+                    button.Background = Brushes.Red;
+                }
+
+            }
+
+
+        }
+        private void DisableHover()
+        {
+            foreach (var b in new[] { answerIdx0Btn, answerIdx1Btn, answerIdx2Btn, answerIdx3Btn })
+            {
+                b.IsHitTestVisible = false; 
+                
+            }
+
+        }
+        private void ResetColorOnAnswerButtonsAndHover()
+        {
+            answerIdx0Btn.Background = Brushes.LightBlue;
+            answerIdx1Btn.Background = Brushes.Yellow;
+            answerIdx2Btn.Background = Brushes.Orange; 
+            answerIdx3Btn.Background = Brushes.LightCoral;
+
+            foreach (var b in new[] { answerIdx0Btn, answerIdx1Btn, answerIdx2Btn, answerIdx3Btn })
+            {
+                b.IsHitTestVisible = true;
+            }
+        }
+
+        private void NextQuestionStyleBtn()
+        {
+            NextQuestionBtn.Content = "Next question";
+            NextQuestionBtn.ClearValue(Button.BackgroundProperty);
+            NextQuestionBtn.ClearValue(Button.ForegroundProperty);
+            
+
+        }
+        private void NextPlayerStyleBtn()
+        {
+            
+
+            NextQuestionBtn.Content = "Next player";
+            NextQuestionBtn.Background = new SolidColorBrush(Colors.Black);
+            NextQuestionBtn.Foreground = new SolidColorBrush(Colors.White);
+            
+            
+        }
         
 
     }

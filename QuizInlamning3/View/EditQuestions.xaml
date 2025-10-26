@@ -14,11 +14,15 @@
         </Grid.RowDefinitions>
 
         <!-- Header -->
-        <Border Grid.Row="0">
+        <StackPanel Grid.Row="0">
+        <Border >
             <TextBlock x:Name="Header" VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    FontSize="24">Edit Questions</TextBlock>
         </Border>
+            <TextBox x:Name="newQuizName" Visibility="Collapsed" Height="20" Width="120" />
+            <Button x:Name="confirmNewQuizName" Click="confirmNewQuizName_Click" Visibility="Collapsed">Byt namn på Quiz</Button>
+        </StackPanel>
 
         <!-- Listbox + Alternativ -->
         <Grid Grid.Row="1">
@@ -54,9 +58,11 @@
             <!-- Alternativ -->
             <StackPanel Margin="10" x:Name="answersTxtbox" Grid.Row="1" Grid.Column="1">
                 <TextBox x:Name="TxtQuestionText"/>
-                <TextBox x:Name="imageStringTxtbox"></TextBox>
+                    <TextBox x:Name="imageStringTxtbox"></TextBox>
+                    <TextBox x:Name="categoryTxtBox"></TextBox>
                     <StackPanel x:Name="AnswerPanel"/>
                 </StackPanel>
+                <Button x:Name="newQuestion" Click="newQuestion_Click" Content="Ny fråga"/>
                 <Button x:Name="saveChangesBtn" Click="saveChangesBtn_Click">Spara ändringar</Button>
             </StackPanel>
         </Grid>
@@ -66,8 +72,10 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="backToMenubtn" Click="backToMenubtn_Click" Grid.Column="1">Tillbaka till menyn</Button>
-            <Button x:Name="newQuizBtn" Click="newQuizBtn_Click" Grid.Column="0"> Nya frågor</Button>
+            <Button x:Name="SaveAndbackToMenubtn" Click="SaveAndbackToMenubtn_Click" Grid.Column="1">Tillbaka till menyn</Button>
+            <StackPanel x:Name="LoadQuizes">
+                <Button x:Name="newQuizBtn" Click="newQuizBtn_Click" Grid.Column="0"> Nya frågor</Button>
+            </StackPanel>
         </Grid>
 
     </Grid>

@@ -9,13 +9,13 @@ namespace QuizInlamning3.Models
 {
     public class Quiz
     {
-
+        public string Name { get; set; }
         public List<Player> Players = new List<Player>();
         public List<Question> Questions = new List<Question>();
 
-        public Quiz(List<Question> questions, List<Player> players)
+        public Quiz(string name, List<Question> questions, List<Player> players)
         {
-
+            Name = name;
             Questions = questions;
             Players = players;
         }
@@ -84,7 +84,7 @@ namespace QuizInlamning3.Models
             return category;
         }
         
-        //Används inte
+        //TODO: Används inte- byt mot att blanda frågorna 
         public int GetRandomQuestionIndex(List<Question> questions, List<int> usedIndexes)
         {
             
@@ -101,7 +101,7 @@ namespace QuizInlamning3.Models
             return randomIndex;
         }
 
-        //public int IndexOfCurrentQuestion
+       
         
     }
 }

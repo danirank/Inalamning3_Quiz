@@ -24,11 +24,12 @@ namespace QuizInlamning3
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         private Quiz _quiz;
         public MainWindow()
         {
             InitializeComponent();
-
+          
             Loaded += MainLoaded;
 
         }
@@ -58,7 +59,7 @@ namespace QuizInlamning3
             var questions = await questionsTask;
             var players = await playersTask;
 
-            return new Quiz(questions, players);
+            return new Quiz("CsharpQuestions", questions, players);
 
             } catch(Exception ex)
             {

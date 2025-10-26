@@ -9,43 +9,7 @@ using System.ComponentModel;
 
 namespace QuizInlamning3.Models
 {
-    //public enum Category
-    //{
-
-    //    GeneralKnowledge,
-    //    FoodAndDrink,
-    //    Sports,
-    //    Animals,
-    //    Geography,
-    //    ScienceAndNature
-    //}
-    //public enum Category
-    //{
-    //    Datatyper,
-    //    Operatorer,
-    //    Variabler,
-    //    KlasserOchObjekt,
-    //    Arv,
-    //    Polymorfism,
-    //    Interface,
-    //    Abstraktion,
-    //    Collections,
-    //    LINQ,
-    //    Delegater,
-    //    Events,
-    //    AsyncAwait,
-    //    Felhantering,
-    //    FilerOchIO,
-    //    Generics,
-    //    Static,
-    //    PartialClasses,
-    //    Records,
-    //    Properties,
-    //    Enums,
-    //    MinneOchGC,
-    //    Reflektion,
-    //    Attributes
-    //}
+    
 
     public enum QType
     {
