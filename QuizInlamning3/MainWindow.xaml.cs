@@ -24,7 +24,8 @@ namespace QuizInlamning3
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+        //TODO: Kolla över språk, blandar sve/eng
+        //TODO: Spara/ladda till specifikt folder
         private Quiz _quiz;
         public MainWindow()
         {
@@ -45,6 +46,8 @@ namespace QuizInlamning3
             MainContent.Content = new MenuView(_quiz, Navigate);
 
         }
+
+        
         private async Task<Quiz> LoadQuizAsync()
         {
             try
