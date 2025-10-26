@@ -28,11 +28,15 @@ namespace QuizInlamning3.View
         private Quiz _quiz;
         private ObservableCollection<Question> _questions;
         private Action<UserControl> _navigate;
+        private bool _isCreatingNewQuiz = false;
+        private List<Question> _newQuizQuestions;
         public EditQuestions(Quiz quiz, Action<UserControl> navigate)
         {
             InitializeComponent();
             _quiz = quiz;
             _navigate = navigate;
+            _questions = new ObservableCollection<Question>(_quiz.Questions);
+            
             ShowAllQuestions();
             if (_questions.Any())
             {
@@ -47,12 +51,10 @@ namespace QuizInlamning3.View
         
         private void ShowAllQuestions()
         {
-            _questions = new ObservableCollection<Question>(_quiz.Questions);
+           
             ListAllQuestionsText.ItemsSource = _questions;
             ListAllQuestionsText.DisplayMemberPath = "QuestionText";
             
-                
-           
         }
         private void ShowAnswers()
         {
@@ -134,46 +136,70 @@ namespace QuizInlamning3.View
         {
             ListSaver<Question> saveQuestions = new ListSaver<Question>();
 
-
+            //Gör filvägen dynamisk
             await saveQuestions.SaveAsync(_quiz.Questions, "Data/ImagesQuestions.txt");
         }
 
         private void ListAllQuestionsText_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            
             ShowAnswers();
+        }
+
+        public void SaveQuestionToList()
+        {
+            int questionIndex = ListAllQuestionsText.SelectedIndex;
+            Question question;
+
+            if (_isCreatingNewQuiz)
+            {
+                question = _questions[questionIndex];
+                  
+            } 
+            else
+            {
+                 question = _quiz.Questions[questionIndex];
+            }
+
+                if (question.QType == QType.Image)
+                {
+                    question.ImagePath = imageStringTxtbox.Text;
+                }
+
+                   question.QuestionText = TxtQuestionText.Text;
+
+                   foreach (StackPanel child in AnswerPanel.Children)
+                   {
+                        var checkBox = (CheckBox)child.Children[0];
+                        var textBox = (TextBox)child.Children[1];
+
+                        if (checkBox.IsChecked == true)
+                        {
+                            question.CorrectAnswerIndex = (int)checkBox.Tag;
+                        }
+
+                        question.Answers[(int)textBox.Tag] = textBox.Text;
+                   }
+
+           
+
         }
         private void saveChangesBtn_Click(object sender, RoutedEventArgs e)
         {
-            
-            int questionIndex = ListAllQuestionsText.SelectedIndex; 
-            var question = _quiz.Questions[questionIndex];
-            if (question.QType == QType.Image)
-            {
-                question.ImagePath = imageStringTxtbox.Text;
-            }
 
-            question.QuestionText = TxtQuestionText.Text;
-
-            foreach(StackPanel child in AnswerPanel.Children)
-            {
-                var checkBox = (CheckBox)child.Children[0];
-                var textBox = (TextBox)child.Children[1];
-
-                if (checkBox.IsChecked == true)
-                {
-                    question.CorrectAnswerIndex = (int)checkBox.Tag;
-                }
-
-                question.Answers[(int)textBox.Tag] = textBox.Text;
-            }
-
+            SaveQuestionToList();
             MessageBox.Show("Frågan är uppdaterad");
 
+           
         }
 
 
         private async void backToMenubtn_Click(object sender, RoutedEventArgs e)
         {
+            if (_isCreatingNewQuiz)
+            {
+                _quiz.Questions = _questions.ToList(); 
+            }
             // Spara till JSON 
             try
             {
@@ -184,6 +210,41 @@ namespace QuizInlamning3.View
             {
                 MessageBox.Show(ex.Message);
             }
+
+        }
+        public void ClearAnswers()
+        {
+            foreach (var child in AnswerPanel.Children)
+            {
+                if (child is TextBox)
+                {
+                    TextBox textBox = (TextBox)child;
+                    textBox.Text = "";
+                }
+            }
+        }
+
+        private void newQuizBtn_Click(object sender, RoutedEventArgs e)
+        {
+            _newQuizQuestions = new List<Question>();
+            _isCreatingNewQuiz = true;
+            Header.Text = "New quiz"; 
+            
+            _questions.Clear();
+            ClearAnswers();
+            Question placeHolderQuestion = new Question()
+            {
+                QuestionText  = "Frågetext", 
+                Answers = new string[] {" "," "," "," "},
+
+
+            };
+            
+            _questions.Add(placeHolderQuestion);
+            ListAllQuestionsText.SelectedIndex = 0;
+
+
+
 
         }
     }

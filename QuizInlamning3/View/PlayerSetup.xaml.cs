@@ -27,7 +27,7 @@ namespace QuizInlamning3.View
         private List<Question> _currentQuestions;
         private ObservableCollection<Player> _activePlayers;
         private Action<UserControl> _navigate;
-        private HashSet<Category> _selectedCategories;
+        private HashSet<string> _selectedCategories;
         private static readonly Regex _numericRegex = new Regex("^[0-9]+$");
         public PlayerSetup(Quiz quiz, Action<UserControl> navigate)
         {
@@ -40,7 +40,7 @@ namespace QuizInlamning3.View
             _quiz = quiz;
             _navigate = navigate;
             _activePlayers = new ObservableCollection<Player>();
-            _selectedCategories = new HashSet<Category>();
+            _selectedCategories = new HashSet<string>();
             _currentQuestions = new List<Question>();
             LoadCategories();
             
@@ -49,7 +49,7 @@ namespace QuizInlamning3.View
 
         private void LoadCategories()
         {
-            foreach (var category in Enum.GetValues(typeof(Category)))
+            foreach (var category in _quiz.AllCategories(_quiz.Questions))
             {
                 var checkBox = new CheckBox
                 {
@@ -93,7 +93,7 @@ namespace QuizInlamning3.View
         }
         private void Category_CheckedChanged(object sender, RoutedEventArgs e)
         {
-            if (sender is CheckBox cb && cb.Tag is Category cat)
+            if (sender is CheckBox cb && cb.Tag is string cat)
             {
                 if (cb.IsChecked == true) _selectedCategories.Add(cat);
                 else _selectedCategories.Remove(cat);

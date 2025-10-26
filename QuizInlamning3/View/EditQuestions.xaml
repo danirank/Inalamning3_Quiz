@@ -15,7 +15,7 @@
 
         <!-- Header -->
         <Border Grid.Row="0">
-            <TextBlock VerticalAlignment="Center"
+            <TextBlock x:Name="Header" VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    FontSize="24">Edit Questions</TextBlock>
         </Border>
@@ -61,7 +61,15 @@
             </StackPanel>
         </Grid>
 
-        <Button x:Name="backToMenubtn" Click="backToMenubtn_Click" Grid.Row="2"> Tillbaka till menyn</Button>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backToMenubtn" Click="backToMenubtn_Click" Grid.Column="1">Tillbaka till menyn</Button>
+            <Button x:Name="newQuizBtn" Click="newQuizBtn_Click" Grid.Column="0"> Nya frågor</Button>
+        </Grid>
+
     </Grid>
 
 </UserControl>

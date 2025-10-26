@@ -71,9 +71,14 @@ namespace QuizInlamning3.Models
             return players;
         }
 
-        
+        public List<string> AllCategories(List<Question> questions)
+        {
+            var categories = questions.Select(x => x.Category).Distinct().ToList();
 
-        public List<Question> QuestionsByCategory(Category categoryInput)
+            return categories; 
+        }
+
+        public List<Question> QuestionsByCategory(string categoryInput)
         {
             var category  = Questions.Where(q => q.Category == categoryInput).ToList();
             return category;
