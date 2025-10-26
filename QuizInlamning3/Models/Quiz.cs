@@ -27,9 +27,7 @@ namespace QuizInlamning3.Models
 
         public int CorrectAnswer(List<Question> questions, int questionIndex) => questions[questionIndex].CorrectAnswerIndex;
 
-        //Lägger till spelare i spelarlistan 
-        public void AddPlayerToList(Player player) => Players.Add(player);
-
+       
         public string ShowQuestionText(List<Question> questions, int questionIndex) => questions[questionIndex].QuestionText;
 
         public bool IsImageQuestion (List<Question> question,int questionIndex)
@@ -78,28 +76,9 @@ namespace QuizInlamning3.Models
             return categories; 
         }
 
-        public List<Question> QuestionsByCategory(string categoryInput)
-        {
-            var category  = Questions.Where(q => q.Category == categoryInput).ToList();
-            return category;
-        }
         
-        //TODO: Används inte- byt mot att blanda frågorna 
-        public int GetRandomQuestionIndex(List<Question> questions, List<int> usedIndexes)
-        {
-            
-            Random r = new Random();
-            int maxValue = questions.Count;
-            int randomIndex = r.Next(maxValue);
-            
-
-            while (usedIndexes.Contains(randomIndex))
-            {
-                randomIndex = r.Next(maxValue);
-            }
-
-            return randomIndex;
-        }
+        
+        
 
        
         
