@@ -258,15 +258,6 @@ namespace QuizInlamning3.View
 
         }
 
-        private void saveChangesBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-            SaveQuestionToList();
-            MessageBox.Show("Frågan är uppdaterad");
-
-         
-        }
-
         private async void SaveAndbackToMenubtn_Click(object sender, RoutedEventArgs e)
         {
             if (_isCreatingNewQuiz)
@@ -292,19 +283,16 @@ namespace QuizInlamning3.View
             }
 
         }
-
-        //Rensa
-        public void ClearAnswers()
+        private void saveChangesBtn_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var child in AnswerPanel.Children)
-            {
-                if (child is TextBox)
-                {
-                    TextBox textBox = (TextBox)child;
-                    textBox.Text = "";
-                }
-            }
+
+            SaveQuestionToList();
+            MessageBox.Show("Frågan är uppdaterad");
+
+         
         }
+
+        
 
 
         //Nytt quiz
@@ -316,6 +304,17 @@ namespace QuizInlamning3.View
                 confirmNewQuizName.Visibility = Visibility.Visible;
                
                 newQuizName.Focus();
+            }
+        }
+        public void ClearAnswers()
+        {
+            foreach (var child in AnswerPanel.Children)
+            {
+                if (child is TextBox)
+                {
+                    TextBox textBox = (TextBox)child;
+                    textBox.Text = "";
+                }
             }
         }
 

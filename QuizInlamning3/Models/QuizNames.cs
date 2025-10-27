@@ -22,9 +22,6 @@ namespace QuizInlamning3.Models
                 Names.Add(new QuizNamesItems { Name = item.Name });
         }
 
-
-
-
     }
 
     public class QuizNamesItems

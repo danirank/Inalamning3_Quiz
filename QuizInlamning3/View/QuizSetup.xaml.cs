@@ -19,9 +19,9 @@ using System.Windows.Shapes;
 namespace QuizInlamning3.View
 {
     /// <summary>
-    /// Interaction logic for PlayerSetup.xaml
+    /// Interaction logic for QuizSetup.xaml
     /// </summary>
-    public partial class PlayerSetup : UserControl
+    public partial class QuizSetup : UserControl
     {
         private Player _player;
         private Quiz _quiz;
@@ -30,7 +30,7 @@ namespace QuizInlamning3.View
         private Action<UserControl> _navigate;
         private HashSet<string> _selectedCategories;
         private static readonly Regex _numericRegex = new Regex("^[0-9]+$");
-        public PlayerSetup(Quiz quiz, Action<UserControl> navigate)
+        public QuizSetup(Quiz quiz, Action<UserControl> navigate)
         {
             InitializeComponent();
 
@@ -45,8 +45,9 @@ namespace QuizInlamning3.View
             
             
         }
-        //Ladda quiz
 
+
+        //Ladda quiz
         private async void changeQuiz_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (changeQuiz.SelectedIndex == 0)
@@ -55,7 +56,7 @@ namespace QuizInlamning3.View
             }
             _currentQuestions.Clear();
             _quiz.Questions.Clear();
-            string selectedQuiz = changeQuiz.SelectedItem.ToString();
+            string selectedQuiz = changeQuiz.SelectedValue.ToString();
 
             headerSetup.Text = selectedQuiz;
 
@@ -81,15 +82,33 @@ namespace QuizInlamning3.View
         {
             
             changeQuiz.ItemsSource = QuizNames.Names;
+            changeQuiz.DisplayMemberPath = "Name";
+            changeQuiz.SelectedValuePath = "Name";
             changeQuiz.SelectedItem = QuizNames.Names.First();
+        }
+
+        private CheckBox CheckBoxAllCategories()
+        {
+            CheckBox selectAllCategories = new CheckBox()
+            {
+                Content = "All",
+                
+            };
+            CategoryPanel.Children.Add(selectAllCategories);
+            selectAllCategories.Checked += SelectAllCategories_Checked;
+            selectAllCategories.Unchecked += SelectAllCategories_Checked;
+
+            return selectAllCategories;
+
         }
         private void LoadCategories()
         {
-
-
             HeaderText();
             _selectedCategories.Clear();
             CategoryPanel.Children.Clear();
+
+            CheckBox SelectAllCategories = CheckBoxAllCategories();
+
             SelectAllCategories.IsChecked = false;
            
             foreach (var category in _quiz.AllCategories(_quiz.Questions))
@@ -220,7 +239,8 @@ namespace QuizInlamning3.View
         //Val av kategorier
         private void SelectAllCategories_Checked(object sender, RoutedEventArgs e)
         {
-            bool isChecked = SelectAllCategories.IsChecked == true;
+            var cbAll = sender as CheckBox;
+            bool isChecked = cbAll.IsChecked == true;
 
             foreach (CheckBox cb in CategoryPanel.Children)
             {

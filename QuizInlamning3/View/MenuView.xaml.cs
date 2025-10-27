@@ -36,7 +36,7 @@ namespace QuizInlamning3.View
         private void playBtn_Click(object sender, RoutedEventArgs e)
         {
             
-            _navigate(new PlayerSetup(_quiz,_navigate));
+            _navigate(new QuizSetup(_quiz,_navigate));
 
         }
 

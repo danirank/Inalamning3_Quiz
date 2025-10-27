@@ -48,22 +48,22 @@ namespace QuizInlamning3
 
         }
 
+            //Laddar ett standardQuiz och tidigare spelare
         
         private async Task<Quiz> LoadQuizAsync()
         {
             try
             {
             var playerLoader = new ListLoader<Player>();
-            var questionLoader = new ListLoader<Question>();
-            
-                //Laddar ALLA frågor och tidigare spelare
+             var questionLoader = new ListLoader<Question>();
             var questionsTask = questionLoader.LoadAsync("Data/CsharpQuestions.txt");
             var playersTask = playerLoader.LoadAsync("Data/Players.txt");
 
             var questions = await questionsTask;
             var players = await playersTask;
 
-            return new Quiz("CsharpQuestions", questions, players);
+            
+            return new Quiz("CsharpQuestions", questions , players);
 
             } catch(Exception ex)
             {

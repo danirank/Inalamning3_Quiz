@@ -6,78 +6,94 @@
              xmlns:local="clr-namespace:QuizInlamning3.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid Background="#FAFAFA" Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <!-- Header -->
-        <StackPanel Grid.Row="0">
-        <Border >
-            <TextBlock x:Name="Header" VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   FontSize="24">Edit Questions</TextBlock>
-        </Border>
-            <TextBox x:Name="newQuizName" Visibility="Collapsed" Height="20" Width="120" />
-            <Button x:Name="confirmNewQuizName" Click="confirmNewQuizName_Click" Visibility="Collapsed">Byt namn på Quiz</Button>
+        <StackPanel Grid.Row="0" Margin="0,0,0,12">
+            <Border Padding="12" Background="#F0F3F7" CornerRadius="6">
+                <TextBlock x:Name="Header"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontSize="24"
+                           FontWeight="SemiBold"
+                           Text="Edit Questions"/>
+            </Border>
+
+            <StackPanel Orientation="Horizontal" Margin="0,8,0,0" HorizontalAlignment="Center">
+                <TextBox x:Name="newQuizName" Visibility="Collapsed" Height="28" Width="200" />
+                <Button x:Name="confirmNewQuizName" Click="confirmNewQuizName_Click" Visibility="Collapsed" Padding="10,6">Byt namn på Quiz</Button>
+            </StackPanel>
         </StackPanel>
 
         <!-- Listbox + Alternativ -->
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <!-- Rubriker -->
                 <RowDefinition Height="*"/>
-                <!-- Innehåll -->
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="1.1*"/>
+                <ColumnDefinition Width="1.4*"/>
             </Grid.ColumnDefinitions>
 
             <!-- Rubriker -->
-            <Border Grid.Row="0" Grid.Column="0" Padding="5" Background="#EEE" CornerRadius="4" Margin="0,0,0,5">
+            <Border Grid.Row="0" Grid.Column="0" Padding="8" Background="#EDEFF2" CornerRadius="6" Margin="0,0,8,8">
                 <TextBlock Text="Alla frågor" FontWeight="Bold"/>
             </Border>
-            <Border Grid.Row="0" Grid.Column="1" Padding="5" Background="#EEE" CornerRadius="4" Margin="0,0,0,5">
+            <Border Grid.Row="0" Grid.Column="1" Padding="8" Background="#EDEFF2" CornerRadius="6" Margin="8,0,0,8">
                 <TextBlock HorizontalAlignment="Center" Text="Redigera fråga" FontWeight="Bold"/>
             </Border>
 
             <!-- Listan -->
-            <Border Grid.Row="1" Grid.Column="0" BorderBrush="#CCC" BorderThickness="1" CornerRadius="4">
+            <Border Grid.Row="1" Grid.Column="0" BorderBrush="#D8DFE6" BorderThickness="1" CornerRadius="6" Background="White" Margin="0,0,8,0">
                 <ListBox Name="ListAllQuestionsText"
-                     ScrollViewer.VerticalScrollBarVisibility="Auto"
-                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                     Margin="0"
-                     Padding="4"
-                     SelectionChanged="ListAllQuestionsText_SelectionChanged"/>
+                         ScrollViewer.VerticalScrollBarVisibility="Auto"
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                         Margin="0"
+                         Padding="6"
+                         SelectionChanged="ListAllQuestionsText_SelectionChanged"/>
             </Border>
-            <StackPanel Grid.Column="1" Grid.Row="1">
-            <!-- Alternativ -->
-            <StackPanel Margin="10" x:Name="answersTxtbox" Grid.Row="1" Grid.Column="1">
-                <TextBox x:Name="TxtQuestionText"/>
-                    <TextBox x:Name="imageStringTxtbox"></TextBox>
-                    <TextBox x:Name="categoryTxtBox"></TextBox>
-                    <StackPanel x:Name="AnswerPanel"/>
-                </StackPanel>
-                <Button x:Name="newQuestion" Click="newQuestion_Click" Content="Ny fråga"/>
-                <Button x:Name="saveChangesBtn" Click="saveChangesBtn_Click">Spara ändringar</Button>
-            </StackPanel>
+
+            <!-- Editpanel -->
+            <Border Grid.Row="1" Grid.Column="1" BorderBrush="#D8DFE6" BorderThickness="1" CornerRadius="6" Background="White" Margin="8,0,0,0">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <StackPanel Grid.Column="1" Grid.Row="1" Margin="12" >
+                        <StackPanel Margin="0,0,0,4" x:Name="answersTxtbox">
+                            <TextBox x:Name="TxtQuestionText" Height="28" Margin="0,0,0,6" />
+                            <TextBox x:Name="imageStringTxtbox" Height="28" Margin="0,0,0,6"/>
+                            <TextBox x:Name="categoryTxtBox" Height="28" Margin="0,0,0,10"/>
+                            <StackPanel x:Name="AnswerPanel" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right"  Margin="0,6,0,0">
+                            <Button x:Name="newQuestion" Click="newQuestion_Click" Content="Ny fråga" Padding="12,6"/>
+                            <Button x:Name="saveChangesBtn" Click="saveChangesBtn_Click" Padding="12,6">Spara ändringar</Button>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
         </Grid>
 
-        <Grid Grid.Row="2">
+        <!-- Footer-knappar -->
+        <Grid Grid.Row="2" Margin="0,12,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="SaveAndbackToMenubtn" Click="SaveAndbackToMenubtn_Click" Grid.Column="1">Tillbaka till menyn</Button>
-            <StackPanel x:Name="LoadQuizes">
-                <Button x:Name="newQuizBtn" Click="newQuizBtn_Click" Grid.Column="0"> Nya frågor</Button>
+
+            <StackPanel x:Name="LoadQuizes" Orientation="Horizontal" Grid.Column="0" >
+                <Button x:Name="newQuizBtn" Click="newQuizBtn_Click" Padding="12,8">Nya frågor</Button>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="SaveAndbackToMenubtn" Click="SaveAndbackToMenubtn_Click" Padding="14,8">Spara och gå tillbaka till menyn</Button>
             </StackPanel>
         </Grid>
 
     </Grid>
-
 </UserControl>

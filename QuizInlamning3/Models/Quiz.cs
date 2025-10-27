@@ -76,9 +76,7 @@ namespace QuizInlamning3.Models
             return categories; 
         }
 
-        
-        
-        
+       
 
        
         

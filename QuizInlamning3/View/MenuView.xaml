@@ -6,28 +6,80 @@
              xmlns:local="clr-namespace:QuizInlamning3.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Blue">
 
+    <Grid Background="#1E3A5F">
         <Grid.RowDefinitions>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="40"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="40"/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Grid.Row="1" Grid.Column="1" Text="QuizGame" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Foreground="Beige"/>
+        <!-- Titel -->
+        <Border Grid.Row="1" Grid.Column="1"
+                Background="#2E4A73"
+                CornerRadius="8"
+                Padding="16"
+                Margin="0,0,0,20"
+                HorizontalAlignment="Center">
+            <TextBlock Text="QuizGame"
+                       Foreground="WhiteSmoke"
+                       FontSize="30"
+                       FontWeight="SemiBold"
+                       TextAlignment="Center"
+                       VerticalAlignment="Center"/>
+        </Border>
 
-        <StackPanel VerticalAlignment="Center" Grid.Row="2" Grid.Column="1">
-            <Button x:Name="playBtn" Click="playBtn_Click" Margin="10">Play</Button>
-            <Button x:Name="editBtn" Click="editBtn_Click" Margin="10">Edit Questions</Button>
-            <Button x:Name="leaderboardBtn" Click="leaderboardBtn_Click" Margin="10">Show Leaderboard</Button>
+        <!-- Knappar -->
+        <StackPanel Grid.Row="2" Grid.Column="1"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Center"
+                    Margin="0,0,0,40">
+
+            <Button x:Name="playBtn"
+                    Click="playBtn_Click"
+                    Content="Spela Quiz"
+                    Background="#4C74B9"
+                    Foreground="White"
+                    Padding="14,8"
+                    Margin="0,6"
+                    Width="200"
+                    FontSize="16"
+                    BorderBrush="#395A93"
+                    BorderThickness="1"
+                    Cursor="Hand"/>
+
+            <Button x:Name="editBtn"
+                    Click="editBtn_Click"
+                    Content="Redigera/Skapa  Quiz"
+                    Background="#4C74B9"
+                    Foreground="White"
+                    Padding="14,8"
+                    Margin="0,6"
+                    Width="200"
+                    FontSize="16"
+                    BorderBrush="#395A93"
+                    BorderThickness="1"
+                    Cursor="Hand"/>
+
+            <Button x:Name="leaderboardBtn"
+                    Click="leaderboardBtn_Click"
+                    Content="Visa Resultatlista"
+                    Background="#4C74B9"
+                    Foreground="White"
+                    Padding="14,8"
+                    Margin="0,6"
+                    Width="200"
+                    FontSize="16"
+                    BorderBrush="#395A93"
+                    BorderThickness="1"
+                    Cursor="Hand"/>
         </StackPanel>
-
     </Grid>
 </UserControl>

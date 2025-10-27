@@ -113,8 +113,8 @@
     <Compile Include="View\MenuView.xaml.cs">
       <DependentUpon>MenuView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PlayerSetup.xaml.cs">
-      <DependentUpon>PlayerSetup.xaml</DependentUpon>
+    <Compile Include="View\QuizSetup.xaml.cs">
+      <DependentUpon>QuizSetup.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PlayQuiz.xaml.cs">
       <DependentUpon>PlayQuiz.xaml</DependentUpon>
@@ -142,7 +142,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\PlayerSetup.xaml">
+    <Page Include="View\QuizSetup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
