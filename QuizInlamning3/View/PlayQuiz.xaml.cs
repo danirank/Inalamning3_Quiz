@@ -44,24 +44,11 @@ namespace QuizInlamning3.View
             _questions = currentQuestions;
             
             ResetColorOnAnswerButtonsAndHover();
+            StartButtonDesideStyleDepingOnQuestionsAndPlayers();
 
-            if (_questions.Count > 0)
-            {
-             ShowQuestion();
-            }
-
-            if (_questions.Count == 1)
-            {
-                NextPlayerStyleBtn();
-            }
-
-            if (_questions.Count == 1 && _players.Count==1)
-            {
-                FinishQuizStyleBtn();
-            }
         }
 
-      
+        //Logik
         private void ShowQuestion()
         {
             
@@ -123,7 +110,6 @@ namespace QuizInlamning3.View
             infoPlayer.Text = $"{_player.Info()}";
             
         }
-
         private bool CheckPlayerIndex(int index)
         {
             
@@ -163,8 +149,6 @@ namespace QuizInlamning3.View
             
 
         }
-
-
         private void NextQuestionBtn_Click(object sender, RoutedEventArgs e)
         {
 
@@ -207,7 +191,6 @@ namespace QuizInlamning3.View
 
 
         }
- 
         private void answerBtn_Click(object sender, RoutedEventArgs e)
         {
             
@@ -235,6 +218,23 @@ namespace QuizInlamning3.View
 
        
         //Style
+        private void StartButtonDesideStyleDepingOnQuestionsAndPlayers()
+        {
+            if (_questions.Count > 0)
+            {
+                ShowQuestion();
+            }
+
+            if (_questions.Count == 1)
+            {
+                NextPlayerStyleBtn();
+            }
+
+            if (_questions.Count == 1 && _players.Count == 1)
+            {
+                FinishQuizStyleBtn();
+            }
+        }
         private void FinishQuizStyleBtn()
         {
             NextQuestionBtn.Content = "Avsluta Quiz🏆";
@@ -304,7 +304,6 @@ namespace QuizInlamning3.View
                 b.IsHitTestVisible = true;
             }
         }
-
         private void NextQuestionStyleBtn()
         {
             NextQuestionBtn.Content = "Nästa fråga➡️";

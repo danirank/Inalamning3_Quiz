@@ -259,7 +259,6 @@ namespace QuizInlamning3.View
                    }
 
         }
-
         private async void SaveAndbackToMenubtn_Click(object sender, RoutedEventArgs e)
         {
             if (_isCreatingNewQuiz)
@@ -294,11 +293,8 @@ namespace QuizInlamning3.View
          
         }
 
-        
-
-
+       
         //Nytt quiz
-
         private void CancelNewQuiz()
         {
             if (_isCreatingNewQuiz)
