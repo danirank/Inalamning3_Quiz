@@ -98,7 +98,7 @@
             </Grid>
                
             <!--Nästa fråga-->
-            <Button x:Name="NextQuestionBtn" Click="NextQuestionBtn_Click" Grid.Column="1" Margin="20">Next question ➡️</Button>
+            <Button x:Name="NextQuestionBtn" Click="NextQuestionBtn_Click" Grid.Column="1" Margin="20">Nästa fråga➡️</Button>
         </Grid>
         
     </Grid>

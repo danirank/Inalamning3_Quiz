@@ -167,7 +167,6 @@ namespace QuizInlamning3.View
 
         private void NextQuestionBtn_Click(object sender, RoutedEventArgs e)
         {
-            NextQuestionStyleBtn();
 
             if (!_questionMarked)
             {
@@ -178,6 +177,7 @@ namespace QuizInlamning3.View
             }
             _questionMarked = false;
             
+            NextQuestionStyleBtn();
             
             ResetColorOnAnswerButtonsAndHover();
 
@@ -237,7 +237,7 @@ namespace QuizInlamning3.View
         //Style
         private void FinishQuizStyleBtn()
         {
-            NextQuestionBtn.Content = "Fisnish quiz";
+            NextQuestionBtn.Content = "Avsluta Quiz🏆";
             NextQuestionBtn.Background = new SolidColorBrush(Colors.Violet);
 
 
@@ -307,7 +307,7 @@ namespace QuizInlamning3.View
 
         private void NextQuestionStyleBtn()
         {
-            NextQuestionBtn.Content = "Next question";
+            NextQuestionBtn.Content = "Nästa fråga➡️";
             NextQuestionBtn.ClearValue(Button.BackgroundProperty);
             NextQuestionBtn.ClearValue(Button.ForegroundProperty);
             
@@ -316,12 +316,14 @@ namespace QuizInlamning3.View
         private void NextPlayerStyleBtn()
         {
             
-
-            NextQuestionBtn.Content = "Next player";
+            
+            NextQuestionBtn.Content = "Nästa spelare‼️";
             NextQuestionBtn.Background = new SolidColorBrush(Colors.Black);
             NextQuestionBtn.Foreground = new SolidColorBrush(Colors.White);
-            
-            
+            NextQuestionBtn.FontWeight = FontWeights.Bold;
+            NextQuestionBtn.MinWidth = 150;
+
+
         }
         
 

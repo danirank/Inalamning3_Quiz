@@ -21,7 +21,7 @@
                            HorizontalAlignment="Center"
                            FontSize="24"
                            FontWeight="SemiBold"
-                           Text="Edit Questions"/>
+                           Text="Redigera/Skapa nya frågor"/>
             </Border>
 
             <StackPanel Orientation="Horizontal" Margin="0,8,0,0" HorizontalAlignment="Center">
@@ -37,8 +37,8 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1.1*"/>
-                <ColumnDefinition Width="1.4*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <!-- Rubriker -->
@@ -82,14 +82,15 @@
         <!-- Footer-knappar -->
         <Grid Grid.Row="2" Margin="0,12,0,0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
+            <ListBox>
             <StackPanel x:Name="LoadQuizes" Orientation="Horizontal" Grid.Column="0" >
-                <Button x:Name="newQuizBtn" Click="newQuizBtn_Click" Padding="12,8">Nya frågor</Button>
+                <Button x:Name="newQuizBtn" Click="newQuizBtn_Click" Padding="12,8">Nytt quiz</Button>
             </StackPanel>
-
+            </ListBox>
             <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button x:Name="SaveAndbackToMenubtn" Click="SaveAndbackToMenubtn_Click" Padding="14,8">Spara och gå tillbaka till menyn</Button>
             </StackPanel>

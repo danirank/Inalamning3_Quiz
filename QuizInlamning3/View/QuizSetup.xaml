@@ -24,7 +24,7 @@
         <StackPanel Grid.Row="0" Margin="0,0,0,12">
             <Border BorderBrush="#D5D9E0" BorderThickness="1" Background="White" CornerRadius="8" Margin="0,0,0,8" Padding="12">
                 <TextBlock x:Name="headerSetup"
-                           Text="Quiz setup"
+                           Text="Quiz"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
                            FontSize="32"
@@ -45,7 +45,7 @@
         <!-- Spelare -->
         <StackPanel Grid.Row="1" Margin="0,0,0,12">
             <Border Background="White" CornerRadius="8" BorderBrush="#D5D9E0" BorderThickness="1" Padding="12" Margin="0,0,0,8">
-                <TextBlock Text="Enter player name"
+                <TextBlock Text="Skriv spelarnamn och tryck på lägg till ⬇️"
                            HorizontalAlignment="Center"
                            FontSize="14"
                            FontWeight="Bold"
@@ -67,7 +67,7 @@
                         Click="addPlayerBtn_Click"
                         Width="120" Height="34"
                         HorizontalAlignment="Center"
-                        Padding="8,4">Add player</Button>
+                        Padding="8,4">Lägg till spelare</Button>
             </Border>
         </StackPanel>
 
@@ -86,7 +86,7 @@
                 </Grid.RowDefinitions>
 
                 <Border Grid.Row="0" Background="White" CornerRadius="8" BorderBrush="#D5D9E0" BorderThickness="1" Padding="10" Margin="0,0,0,8">
-                    <TextBlock FontSize="16" FontWeight="Bold" Text="Choose Categories" />
+                    <TextBlock FontSize="16" FontWeight="Bold" Text="Välj kategorier" />
                 </Border>
 
                 <Border Grid.Row="1" Background="White" CornerRadius="8" BorderBrush="#D5D9E0" BorderThickness="1" Padding="10">
@@ -102,7 +102,7 @@
             <!-- Players -->
             <StackPanel Grid.Column="1" Margin="6,0,0,0">
                 <Border Background="White" CornerRadius="8" BorderBrush="#D5D9E0" BorderThickness="1" Padding="10" Margin="0,0,0,8">
-                    <TextBlock FontSize="16" FontWeight="Bold" Text="Players"/>
+                    <TextBlock FontSize="16" FontWeight="Bold" Text="Quizare"/>
                 </Border>
 
                 <Border Background="White" CornerRadius="8" BorderBrush="#D5D9E0" BorderThickness="1" Padding="6">
@@ -128,13 +128,13 @@
         <!-- Antal frågor + Start-knapp -->
         <Grid Grid.Row="3" Margin="0,12,0,0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <Border Grid.Column="0" Background="White" CornerRadius="8" BorderBrush="#D5D9E0" BorderThickness="1" Padding="10" Margin="0,0,6,0">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                    <TextBlock VerticalAlignment="Center" FontSize="18" Margin="0,0,8,0">Number of questions:</TextBlock>
+                    <TextBlock VerticalAlignment="Center" FontSize="18" Margin="0,0,8,0">Antal frågor: </TextBlock>
                     <TextBox Margin="0,0,0,0"
                              Width="90" Height="34"
                              FontSize="18"
@@ -145,15 +145,28 @@
                 </StackPanel>
             </Border>
 
-            <Border Grid.Column="1" Background="White" CornerRadius="8" BorderBrush="#D5D9E0" BorderThickness="1" Padding="10" Margin="6,0,0,0">
+            <StackPanel Grid.Column="1" Orientation="Horizontal" >
+                <Border Background="White" CornerRadius="8" BorderBrush="#D5D9E0" BorderThickness="1" Padding="10" Margin="6,0,0,0">
+
+                    <Button x:Name="BackToMenuBtn"
+            Click="BackToMenuBtn_Click"
+            Content="Tillbaka till menyn"
+            Height="34"
+            Padding="14,6"
+            HorizontalAlignment="Right"
+            MinWidth="120"/>
+                </Border>
+                <Border Background="White" CornerRadius="8" BorderBrush="#D5D9E0" BorderThickness="1" Padding="10" Margin="6,0,0,0">
+                
                 <Button x:Name="StartQuizBtn"
                         Click="StartQuizBtn_Click"
-                        Content="Start Quiz"
+                        Content="Starta Quiz"
                         Height="34"
                         Padding="14,6"
                         HorizontalAlignment="Right"
                         MinWidth="120"/>
             </Border>
+            </StackPanel>
         </Grid>
     </Grid>
 </UserControl>

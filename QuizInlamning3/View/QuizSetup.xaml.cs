@@ -136,13 +136,13 @@ namespace QuizInlamning3.View
             Random r = new Random();
             var allowedCategories = _selectedCategories; 
 
-            var questions =_currentQuestions.Where(x => allowedCategories.Contains(x.Category)).ToList();
+            var questions =_quiz.Questions.Where(x => allowedCategories.Contains(x.Category)).ToList();
 
             int maxQuizQuestions = questions.Count;
 
             if (numberOfquestions > maxQuizQuestions)
             {
-                MessageBox.Show($"Only {questions.Count} number of questions avalieble in selcted categories");
+                MessageBox.Show($"Det finn bara {questions.Count} frågor tillgängliga utifrån valda kategorier");
                 return;
             }
             //Blanda lista utifrån random tal 
@@ -154,6 +154,11 @@ namespace QuizInlamning3.View
         }
         private int GetNumberOfQuestions()
         {
+            if (string.IsNullOrEmpty(QuestionCountTxtBox.Text))
+            {
+                MessageBox.Show("Ange antal frågor");
+                return 0;
+            }
             int numberOfQuestions = int.Parse(QuestionCountTxtBox.Text);
 
             return numberOfQuestions;
@@ -166,13 +171,13 @@ namespace QuizInlamning3.View
 
             if (_currentQuestions.Count == 0)
             {
-                MessageBox.Show("No Questions");
+                MessageBox.Show("Inga frågor tillagda");
                 return;
             }
 
             if(_activePlayers.Count == 0)
             {
-                MessageBox.Show("No active PLayers");
+                MessageBox.Show("Inga aktiva spelare");
                     return;
             }
 
@@ -257,5 +262,9 @@ namespace QuizInlamning3.View
             }
         }
 
+        private void BackToMenuBtn_Click(object sender, RoutedEventArgs e)
+        {
+            _navigate(new MenuView(_quiz, _navigate));
+        }
     }       
 }

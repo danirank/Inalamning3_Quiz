@@ -28,7 +28,7 @@
                 Padding="16"
                 Margin="0,0,0,20"
                 HorizontalAlignment="Center">
-            <TextBlock Text="QuizGame"
+            <TextBlock Text="Quiz"
                        Foreground="WhiteSmoke"
                        FontSize="30"
                        FontWeight="SemiBold"
