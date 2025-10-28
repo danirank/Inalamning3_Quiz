@@ -160,7 +160,9 @@ namespace QuizInlamning3.View
         //Spara/ladda
         private async void LoadAsync_Click (object sender, RoutedEventArgs e)
         {
-           Button btn = (Button)sender;
+            _isNameConfirmed = true;
+            CancelNewQuiz();
+            Button btn = (Button)sender;
 
           
 
@@ -296,6 +298,15 @@ namespace QuizInlamning3.View
 
 
         //Nytt quiz
+
+        private void CancelNewQuiz()
+        {
+            if (_isCreatingNewQuiz)
+            {
+                newQuizName.Visibility = Visibility.Collapsed;
+                confirmNewQuizName.Visibility = Visibility.Collapsed;
+            }
+        }
         private void NameNewQuiz()
         {
             if (_isCreatingNewQuiz)
