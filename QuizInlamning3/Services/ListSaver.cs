@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace QuizInlamning3.Services
 {
-    internal class ListSaver<T> : ISaver<T> where T : class
+    public class ListSaver<T> : ISaver<T> where T : class
     {
         public async Task<List<T>> SaveAsync(List<T> classList, string filePath)
         {

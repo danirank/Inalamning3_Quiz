@@ -23,7 +23,6 @@ namespace QuizInlamning3.View
     public partial class MenuView : UserControl
     {
         private Quiz _quiz;
-        private List<Question> _questions;
         private Action<UserControl> _navigate;
         public MenuView(Quiz quiz, Action<UserControl> navigate)
         {

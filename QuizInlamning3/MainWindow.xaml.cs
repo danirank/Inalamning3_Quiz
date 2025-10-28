@@ -24,8 +24,7 @@ namespace QuizInlamning3
     /// </summary>
     public partial class MainWindow : Window
     {
-        //TODO: Kolla över språk, blandar sve/eng
-        //TODO: Spara/ladda till specifikt folder
+       
         private Quiz _quiz;
         public MainWindow()
         {
@@ -48,7 +47,8 @@ namespace QuizInlamning3
 
         }
 
-            //Laddar ett standardQuiz och tidigare spelare
+          
+        //Laddar ett standardQuiz och tidigare spelare
         
         private async Task<Quiz> LoadQuizAsync()
         {
@@ -73,6 +73,7 @@ namespace QuizInlamning3
 
         }
 
+        //Navigering mellan UserControls
         public void Navigate(UserControl newView)
         {
             MainContent.Content = newView; 

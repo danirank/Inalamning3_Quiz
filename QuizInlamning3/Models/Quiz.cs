@@ -27,7 +27,6 @@ namespace QuizInlamning3.Models
 
         public int CorrectAnswer(List<Question> questions, int questionIndex) => questions[questionIndex].CorrectAnswerIndex;
 
-       
         public string ShowQuestionText(List<Question> questions, int questionIndex) => questions[questionIndex].QuestionText;
 
         public bool IsImageQuestion (List<Question> question,int questionIndex)
