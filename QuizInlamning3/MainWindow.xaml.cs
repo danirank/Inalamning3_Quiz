@@ -47,17 +47,18 @@ namespace QuizInlamning3
 
         }
 
-          
-        //Laddar ett standardQuiz och tidigare spelare
-        
+
+        //Spara över Mockdata till AppData Local och laddar in standardQuiz
+      
         private async Task<Quiz> LoadQuizAsync()
         {
             try
             {
-            var playerLoader = new ListLoader<Player>();
+             FileHelper.EnsureDataSeeded();
+             var playerLoader = new ListLoader<Player>();
              var questionLoader = new ListLoader<Question>();
-            var questionsTask = questionLoader.LoadAsync("Data/CsharpQuestions.txt");
-            var playersTask = playerLoader.LoadAsync("Data/Players.txt");
+             var questionsTask = questionLoader.LoadAsync("CsharpQuestions.txt");
+             var playersTask = playerLoader.LoadAsync("Players.txt");
 
             var questions = await questionsTask;
             var players = await playersTask;

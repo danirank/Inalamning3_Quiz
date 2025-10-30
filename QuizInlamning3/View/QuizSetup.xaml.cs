@@ -60,23 +60,27 @@ namespace QuizInlamning3.View
 
             headerSetup.Text = selectedQuiz;
 
-            string filePath = $"Data/{selectedQuiz}.txt";
+            string filePath = $"{selectedQuiz}.txt";
 
-            if (!System.IO.File.Exists(filePath))
-            {
-                MessageBox.Show($"Filen hittas inte: {filePath}");
-                return;
-            }
 
 
             ListLoader<Question> loadquestions = new ListLoader<Question>();
 
-            var questions = await loadquestions.LoadAsync(filePath);
+            try
+            {
+                var questions = await loadquestions.LoadAsync(filePath);
+                _quiz.Name = selectedQuiz;
+                _currentQuestions = questions;
+                _quiz.Questions = questions;
+                LoadCategories();
+
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             
-            _quiz.Name = selectedQuiz;
-            _currentQuestions = questions;
-            _quiz.Questions = questions;
-            LoadCategories();
+            
         }
         private void ChangeQuiz()
         {

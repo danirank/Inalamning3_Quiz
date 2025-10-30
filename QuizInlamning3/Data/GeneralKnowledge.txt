@@ -10,7 +10,7 @@
     "Category": "GeneralKnowledge",
     "QType": "Image",
     "QuestionText": "Vilket land tillhör flaggan på bilden?",
-    "ImagePath": "Images/flag_sweden.jpg",
+    "ImagePath": "Images/GeneralKnwledge/flag_sweden.jpg",
     "Answers": ["Sverige", "Norge", "Finland", "Danmark"],
     "CorrectAnswerIndex": 0
   },
@@ -40,7 +40,7 @@
     "Category": "ScienceAndNature",
     "QType": "Image",
     "QuestionText": "Vad illustreras på bilden?",
-    "ImagePath": "Images/moon_phases.png",
+    "ImagePath": "Images/GeneralKnwledge/moon_phases.png",
     "Answers": ["Månens faser", "Solfläckar", "Norrsken", "Meteorregn"],
     "CorrectAnswerIndex": 0
   },
@@ -49,7 +49,7 @@
     "Category": "Animals",
     "QType": "Image",
     "QuestionText": "Vilket djur visas på bilden?",
-    "ImagePath": "Images/fox.jpg",
+    "ImagePath": "Images/GeneralKnwledge/fox.jpg",
     "Answers": ["Räv", "Varg", "Lodjur", "Mård"],
     "CorrectAnswerIndex": 0
   },
@@ -79,7 +79,7 @@
     "Category": "Sports",
     "QType": "Image",
     "QuestionText": "Vilken sport visas på bilden?",
-    "ImagePath": "Images/tennis_racket_ball.jpg",
+    "ImagePath": "Images/GeneralKnwledge/tennis_racket_ball.jpg",
     "Answers": ["Tennis", "Badminton", "Squash", "Paddel"],
     "CorrectAnswerIndex": 0
   },
@@ -95,7 +95,7 @@
     "Category": "Geography",
     "QType": "Image",
     "QuestionText": "Vilket land visas på kartan?",
-    "ImagePath": "Images/italy_map.png",
+    "ImagePath": "Images/GeneralKnwledge/italy_map.png",
     "Answers": ["Italien", "Spanien", "Frankrike", "Portugal"],
     "CorrectAnswerIndex": 0
   },
@@ -117,7 +117,7 @@
     "Category": "GeneralKnowledge",
     "QType": "Image",
     "QuestionText": "Vilket instrument visas på bilden?",
-    "ImagePath": "Images/guitar.jpg",
+    "ImagePath": "Images/GeneralKnwledge/guitar.jpg",
     "Answers": ["Gitarr", "Fiol", "Piano", "Trumpet"],
     "CorrectAnswerIndex": 0
   },
@@ -132,7 +132,7 @@
     "Category": "ScienceAndNature",
     "QType": "Image",
     "QuestionText": "Vilken vetenskaplig utrustning syns på bilden?",
-    "ImagePath": "Images/microscope.jpg",
+    "ImagePath": "Images/GeneralKnwledge/microscope.jpg",
     "Answers": ["Teleskop", "Mikroskop", "Barometer", "Spektrometer"],
     "CorrectAnswerIndex": 1
   },
@@ -147,7 +147,7 @@
     "Category": "Animals",
     "QType": "Image",
     "QuestionText": "Vilket djur visas på bilden?",
-    "ImagePath": "Images/elephant.png",
+    "ImagePath": "Images/GeneralKnwledge/elephant.png",
     "Answers": ["Elefant", "Flodhäst", "Noshörning", "Giraff"],
     "CorrectAnswerIndex": 0
   },
@@ -164,7 +164,7 @@
     "Category": "Sports",
     "QType": "Image",
     "QuestionText": "Vilken sport visas på bilden?",
-    "ImagePath": "Images/basketball.jpg",
+    "ImagePath": "Images/GeneralKnwledge/basketball.jpg",
     "Answers": ["Handboll", "Basket", "Baseboll", "Rugby"],
     "CorrectAnswerIndex": 1
   },
@@ -181,7 +181,7 @@
     "Category": "Geography",
     "QType": "Image",
     "QuestionText": "Vilken världsdel markeras på bilden?",
-    "ImagePath": "Images/africa_map.jpg",
+    "ImagePath": "Images/GeneralKnwledge/africa_map.jpg",
     "Answers": ["Afrika", "Asien", "Europa", "Sydamerika"],
     "CorrectAnswerIndex": 0
   },

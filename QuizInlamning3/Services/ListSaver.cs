@@ -12,8 +12,10 @@ namespace QuizInlamning3.Services
 {
     public class ListSaver<T> : ISaver<T> where T : class
     {
-        public async Task<List<T>> SaveAsync(List<T> classList, string filePath)
+        public async Task<List<T>> SaveAsync(List<T> classList, string fileName)
         {
+            string filePath = FileHelper.GetAppLocalFolderPath(fileName);
+
             var options = new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase,

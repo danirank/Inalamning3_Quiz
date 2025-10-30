@@ -167,7 +167,7 @@ namespace QuizInlamning3.View
           
 
             string quizName = btn.Content.ToString();
-            string filepath = $"Data/{quizName}.txt";
+            string filepath = $"{quizName}.txt";
 
           
 
@@ -217,10 +217,10 @@ namespace QuizInlamning3.View
             List<QuizNamesItems> names = new List<QuizNamesItems>(QuizNames.Names);
 
             ListSaver<QuizNamesItems> saveQuizNames = new ListSaver<QuizNamesItems>();
-            await saveQuizNames.SaveAsync(names, "Data/QuizNames.txt");
+            await saveQuizNames.SaveAsync(names, "QuizNames.txt");
             
             ListSaver<Question> saveQuestions = new ListSaver<Question>();
-            await saveQuestions.SaveAsync(_quiz.Questions, $"Data/{_quiz.Name}.txt");
+            await saveQuestions.SaveAsync(_quiz.Questions, $"{_quiz.Name}.txt");
         }
         public void SaveQuestionToList()
         {
@@ -275,7 +275,7 @@ namespace QuizInlamning3.View
             
             try
             {
-                await SaveAsync();
+                 await SaveAsync();
                 _navigate(new MenuView(_quiz, _navigate));
 
             } catch (Exception ex)

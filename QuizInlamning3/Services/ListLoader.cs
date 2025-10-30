@@ -12,11 +12,14 @@ namespace QuizInlamning3.Services
 {
     public class ListLoader<T> : ILoader<T> where T : class
     {
-        public async Task<List<T>> LoadAsync (string filepath)
+        public async Task<List<T>> LoadAsync (string fileName)
         {
+
+            string filePath = FileHelper.GetAppLocalFolderPath(fileName);
+
             var list = new List<T>();
 
-            if (File.Exists(filepath))
+            if (File.Exists(filePath))
             {
                 JsonSerializerOptions options = new JsonSerializerOptions();
                 options.PropertyNameCaseInsensitive = true;
@@ -25,7 +28,7 @@ namespace QuizInlamning3.Services
                 options.Converters.Add(converter);
 
 
-                using (var stream = File.OpenRead(filepath))
+                using (var stream = File.OpenRead(filePath))
                 {
 
                     list = await JsonSerializer.DeserializeAsync<List<T>>(stream, options);
