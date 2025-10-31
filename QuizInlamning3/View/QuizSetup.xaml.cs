@@ -84,11 +84,13 @@ namespace QuizInlamning3.View
         }
         private void ChangeQuiz()
         {
-            
-            changeQuiz.ItemsSource = QuizNames.Names;
-            changeQuiz.DisplayMemberPath = "Name";
-            changeQuiz.SelectedValuePath = "Name";
-            changeQuiz.SelectedItem = QuizNames.Names.First();
+            if (QuizNames.Names.Count > 0)
+            {
+                changeQuiz.ItemsSource = QuizNames.Names;
+                changeQuiz.DisplayMemberPath = "Name";
+                changeQuiz.SelectedValuePath = "Name";
+                changeQuiz.SelectedItem = QuizNames.Names.First();
+            }
         }
 
         private CheckBox CheckBoxAllCategories()
